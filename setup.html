@@ -1,0 +1,512 @@
+<html>
+<head>
+<title>Setup</title>
+<style>
+    body {
+        margin:0;
+    }
+    .image {
+        position:fixed;
+        width:100%;
+        height:100%;
+        background:green;
+        background-image:url('Homepage.png');
+        background-size:cover;
+    }
+table, th, td {
+    border: 2px solid black;
+    border-collapse: collapse;
+    !padding: 20px;
+}
+table.pos_fixed1 { 
+    position: fixed; 
+    top: 50px; 
+    left: 30px 
+}
+table.pos_fixed_center {
+    position: fixed;
+    top: 140px;
+    left: 510px;
+}
+table.pos_fixed2 { 
+    position: fixed; 
+    top: 50px;
+    left: 1000px 
+}
+input.pos_fixed_ac {
+    position: fixed;
+    top: 50px;
+    left: 50px
+}
+input.pos_fixed_cr {
+    position: fixed;
+    top: 50px;
+    left: 100px
+}
+input.pos_fixed_sb {
+    position: fixed;
+    top: 250px;
+    left: 100px
+}
+input.pos_fixed_ds {
+    position: fixed;
+    top: 300px;
+    left: 50px
+}
+input.pos_fixed_co {
+    position: fixed;
+    top: 10px;
+    left: 50px;
+}
+p.pos_fixed_do {
+    position: fixed;
+    color: white;
+    top: 14px;
+    left: 50px;
+}
+.table {
+    background: transparent;
+    display: inline-block;
+    border: none;
+    height: 36px; 
+    width: 36px;
+}
+</style>
+<script>
+    var passing = [];
+    var completed = [];
+    var orient = "Horizontal"; 
+    var selected = "";
+    //alert("Something is very wrong.");
+    var i;
+    for (i = 1; i < 101; i++) {
+        passing[i] = 0;
+    }
+    function change_ornt(){
+       var d;
+       d = document.getElementById("display"); 
+       if (orient == "Horizontal"){
+           orient = "Vertical";
+           d.innerHTML = "Vertical";
+       } 
+       else {
+           if (orient == "Vertical") {
+               orient = "Horizontal";
+               d.innerHTML = "Horizontal";
+           }
+           else {
+               orient = "Horizontal";
+               d.innerHTML = "Horizontal";
+           }
+       }
+    }
+    function select_ac(){
+        selected = "ac"
+    }
+    function select_cr(){
+        selected = "cr"
+    }
+    function select_sb(){
+        selected = "sb"
+    }
+    function select_ds(){
+        selected = "ds"
+    }
+    function place(a, b){
+        var fnl = ""
+        lf = parseInt("511") + parseInt(b) * parseInt("40");
+        lf = eval(lf);
+        tp = 141 + a * 40;
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
+        //alert(selected);
+        //alert(a);
+        //alert(b);
+        if (completed.includes(selected) == true) {
+            return;
+        }
+        if ((selected == "ac") && (orient == "Horizontal")) {
+            if (b > 5){
+                return;
+            }
+            if (passing[10*a + b + 1] == 5) {
+                return;
+            } 
+            if (passing[10*a + b + 2] == 5) {
+                return;
+            } 
+            if (passing[10*a + b + 3] == 5) {
+                return;
+            } 
+            if (passing[10*a + b + 4] == 5) {
+                return;
+            } 
+            if (passing[10*a + b + 5] == 5) {
+                return;
+            } 
+            //alert("Say cheese?")
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
+            ac_h.setAttribute("style", fnl); 
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("ac");
+            //alert(completed);
+            passing[10*a + b + 1] = 5;
+            passing[10*a + b + 2] = 5;
+            passing[10*a + b + 3] = 5;
+            passing[10*a + b + 4] = 5;
+            passing[10*a + b + 5] = 5;
+            //alert(passing);
+        }
+        if ((selected == "cr") && (orient == "Horizontal")) {
+            //alert("Say cheese?")
+            if (b > 6){
+                return;
+            }
+            if (passing[10*a + b + 1] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 2] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 3] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 4] == 4) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Cruiser_True.png");
+            ac_h.setAttribute("style", fnl); 
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("cr");
+            //alert(completed);
+            passing[10*a + b + 1] = 4;
+            passing[10*a + b + 2] = 4;
+            passing[10*a + b + 3] = 4;
+            passing[10*a + b + 4] = 4;
+        }
+        if ((selected == "sb") && (orient == "Horizontal")) {
+            //alert("Say cheese?")
+            if (b > 7){
+                return;
+            }
+            if (passing[10*a + b + 1] == 3) {
+                return;
+            }
+            if (passing[10*a + b + 2] == 3) {
+                return;
+            }
+            if (passing[10*a + b + 3] == 3) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Submarine_True.png");
+            ac_h.setAttribute("style", fnl); 
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("sb");
+            //alert(completed);
+            passing[10*a + b + 1] = 3;
+            passing[10*a + b + 2] = 3;
+            passing[10*a + b + 3] = 3;
+        }
+        if ((selected == "ds") && (orient == "Horizontal")) {
+            //alert("Say cheese?")
+            if (b > 8){
+                return;
+            }
+            if (passing[10*a + b + 1] == 2) {
+                return;
+            }
+            if (passing[10*a + b + 2] == 2) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Destroyer_True.png");
+            ac_h.setAttribute("style", fnl); 
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("ds");
+            //alert(completed);
+            passing[10*a + b + 1] = 2;
+            passing[10*a + b + 2] = 2;
+        }
+        if ((selected == "ac") && (orient == "Vertical")) {
+            if (a > 5){
+                return;
+            }
+            if (passing[10*a + b + 1] == 5) {
+                return;
+            }
+            if (passing[10*a + b + 11] == 5) {
+                return;
+            }
+            if (passing[10*a + b + 21] == 5) {
+                return;
+            }
+            if (passing[10*a + b + 31] == 5) {
+                return;
+            }
+            if (passing[10*a + b + 41] == 5) {
+                return;
+            }
+            //alert("Say cheese?")
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Aircraft_Carrier_False.png");
+            ac_h.setAttribute("style", fnl);
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("ac");
+            //alert(completed);
+            passing[10*a + b + 1] = 5;
+            passing[10*a + b + 11] = 5;
+            passing[10*a + b + 21] = 5;
+            passing[10*a + b + 31] = 5;
+            passing[10*a + b + 41] = 5;
+            //alert(passing);
+        }
+        if ((selected == "cr") && (orient == "Vertical")) {
+            //alert("Say cheese?")
+            if (a > 6){
+                return;
+            }
+            if (passing[10*a + b + 1] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 11] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 21] == 4) {
+                return;
+            }
+            if (passing[10*a + b + 31] == 4) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Cruiser_False.png");
+            ac_h.setAttribute("style", fnl);
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("cr");
+            //alert(completed);
+            passing[10*a + b + 1] = 4;
+            passing[10*a + b + 11] = 4;
+            passing[10*a + b + 21] = 4;
+            passing[10*a + b + 31] = 4;
+        }
+        if ((selected == "sb") && (orient == "Vertical")) {
+            //alert("Say cheese?")
+            if (a > 7){
+                return;
+            }
+            if (passing[10*a + b + 1] == 3) {
+                return;
+            }
+            if (passing[10*a + b + 11] == 3) {
+                return;
+            }
+            if (passing[10*a + b + 21] == 3) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Submarine_False.png");
+            ac_h.setAttribute("style", fnl);
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("sb");
+            //alert(completed);
+            passing[10*a + b + 1] = 3;
+            passing[10*a + b + 11] = 3;
+            passing[10*a + b + 21] = 3;
+        }
+        if ((selected == "ds") && (orient == "Vertical")) {
+            //alert("Say cheese?")
+            if (a > 8){
+                return;
+            }
+            if (passing[10*a + b + 1] == 2) {
+                return;
+            }
+            if (passing[10*a + b + 11] == 2) {
+                return;
+            }
+            var ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Destroyer_False.png");
+            ac_h.setAttribute("style", fnl);
+            //alert("I'm here!");
+            //alert(fnl);
+            document.body.appendChild(ac_h);
+            completed.push("ds");
+            //alert(completed);
+            passing[10*a + b + 1] = 2;
+            passing[10*a + b + 11] = 2;
+         }
+        alert(passing);
+    }
+    function send_board()
+    {
+        document.getElementById("hiddenF").value = passing;
+    }
+    //function test() {
+    //    //alert("test");
+    //}
+</script>
+</head>
+<!--body bgcolor = "586171"-->
+<body bgcolor = "black"> <!-- An image is needed. Will work on that.-->
+    <div class = "image"> </div>
+<center>
+<!-- We can make a fancy image for this also-->
+<!--form><input type = "button" value "test" class = "pos_fixed_ac" onclick = "test()"> </form-->
+<p id = "display" class = "pos_fixed_do">Horizontal</p>
+<input type = "image" src = "Aircraft_Carrier_False.png" class = "pos_fixed_ac" onclick = "return select_ac()">
+<input type = "image" src = "Cruiser_False.png" class = "pos_fixed_cr" onclick = "return select_cr()">
+<input type = "image" src = "Submarine_False.png" class = "pos_fixed_sb" onclick = "return select_sb()">
+<input type = "image" src = "Destroyer_False.png" class = "pos_fixed_ds" onclick = "return select_ds()">
+<input type = "button" value = "Change orientation" style = "top: 10px; left: 50px; position: fixed" onclick = "return change_ornt()">
+<div>
+<table bgcolor = "586171" class = "pos_fixed_center">
+<tr>
+<td><input type = "button" class = "table" onclick = "place(0, 0)"></td> 
+<td><input type = "button" class = "table" onclick = "place(0, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(0, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(1, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(1, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(2, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(2, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(3, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(3, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(4, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(4, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(5, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(5, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(6, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(6, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(7, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(7, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(8, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(8, 9)"></td>
+</tr>
+<tr>
+<td><input type = "button" class = "table" onclick = "place(9, 0)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 1)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 2)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 3)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 4)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 5)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 6)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 7)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 8)"></td>
+<td><input type = "button" class = "table" onclick = "place(9, 9)"></td>
+</tr>
+</table>
+<form method = "get" action = "index.html">
+    <input type = "image" src = "Back_to_menu.png" style = "left: 50px; top: 570px; position: fixed;" width = "100px" height = "50px">
+</form>
+<form method = "get" action = "htp.html">
+    <input type = "image" src = "How_to_play.png" style = "left: 670px; top: 570px; position: fixed;" width = "100px" height = "50px">
+</form>
+<form action="send_board.php" method="post" onsubmit="return send_board();">
+    <input type="hidden" id="hiddenF" name="hiddenF" value="">
+    <input type = "submit" name = "play" id = "play" style = "left: 1200px; top: 600px; position: fixed;" value = "Let's Play!" width = "200px" height = "100px">
+    <!-- We need to make an image for this bit -->
+</form>
+</div>
+</body>
+</html>
