@@ -31,7 +31,7 @@
     }
     table.pos_fixed_2 {
         position: absolute;
-        right: 200px;
+        left: 800px;
         top: 100px;
     }
     table.pos_fixed_3 {
@@ -376,8 +376,13 @@
             }
             place(a, b, ship, orient);
         }
-        function hit_or_miss(a, b, hit) {
-            ac_h =
+        function hit_or_miss(a, b, hit, id) {
+            if id =
+            if (hit != 0){
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac.h.setAttribute("style", fnl);
+            }
         }
 	</script>
 </head>
