@@ -13,4 +13,5 @@
 						echo "Hit";
 					
 			}
+	// header('Location: play_area.php?id='. $B_id);
 ?>
