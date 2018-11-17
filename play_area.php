@@ -376,6 +376,9 @@
             }
             place(a, b, ship, orient);
         }
+        function hit_or_miss(a, b, hit) {
+            ac_h =
+        }
 	</script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
@@ -386,15 +389,15 @@
     
 <table bgcolor = "586171" class = "pos_fixed_1">
 <tr>
-<td><input type = "button" class = "table"</td> 
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
-<td><input type = "button" class = "table"</td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
+<td><input type = "button" class = "table"></td>
 <td><input type = "button" class = "table"></td>
 </tr>
 <tr>
