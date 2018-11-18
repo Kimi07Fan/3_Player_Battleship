@@ -405,8 +405,9 @@
                 }
                 else {
                     ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac_h.setAttribute("src", "Miss_cell.png");
                     ac.h.setAttribute("style", fnl);
+                    document.body.appendChild(ac_h);
                 }
             }
         }
