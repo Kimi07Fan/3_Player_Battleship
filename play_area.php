@@ -377,6 +377,24 @@
             place(a, b, ship, orient);
         }
         function hit_or_miss(a, b, hit, id) {
+            /* See if you do need the thing for the player who is playing. You may need it */
+            if (id == 1){  // Me
+                tp = 101 + a * 40;
+                lf = 201 + b * 40;
+                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
+                if (hit != 0){
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                    document.body.appendChild(ac_h);
+                }
+                else {
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                }
+            }
+
             if (id == 2){  // Other Player
                 tp = 101 + a * 40;
                 lf = 851 + b * 40;
@@ -418,6 +436,21 @@
 <p class = "pos_fixed_pl1"> Player 1</p>
 <p class = "pos_fixed_pl2"> Player 2</p>
 <p class = "pos_fixed_pl3"> Computer</p>
+
+<img src = "Aircraft_Carrier_False.png" style = "top: 100px; left: 20px; position: absolute;">
+<img src = "Cruiser_False.png" style = "top: 100px; left: 70px; position: absolute;">
+<img src = "Submarine_False.png" style = "top: 270px; left: 70px; position: absolute;">
+<img src = "Destroyer_False.png" style = "top: 310px; left: 20px; position: absolute;">
+
+<img src = "Aircraft_Carrier_False.png" style = "top: 100px; left: 1380px; position: absolute;">
+<img src = "Cruiser_False.png" style = "top: 100px; left: 1330px; position: absolute;">
+<img src = "Submarine_False.png" style = "top: 270px; left: 1330px; position: absolute;">
+<img src = "Destroyer_False.png" style = "top: 310px; left: 1380px; position: absolute;">
+
+<img src = "Aircraft_Carrier_False.png" style = "top: 650px; left:420px; position: absolute;">
+<img src = "Cruiser_False.png" style = "top: 650px; left: 470px; position: absolute;">
+<img src = "Submarine_False.png" style = "top: 820px; left: 470px; position: absolute;">
+<img src = "Destroyer_False.png" style = "top: 860px; left: 420px; position: absolute;">
     
 <table bgcolor = "586171" class = "pos_fixed_1">
 <tr>
