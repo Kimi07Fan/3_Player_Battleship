@@ -6,7 +6,7 @@
         margin:0;
     }
     .image {
-        position:fixed;
+        position: absolute;
         width:100%;
         height:100%;
         background:green;
@@ -14,14 +14,14 @@
         background-size:cover;
     }
     .play_button{
-        position: fixed;
-        left: 530px;
+        position: absolute;
+        left: 680px;
         top: 200px;
     }
     .htp_button{
-        position: fixed;
-        top: 400px;
-        left: 530px;
+        position: absolute;
+        top: 310px;
+        left: 630px;
     }
 </style>
 </head>
