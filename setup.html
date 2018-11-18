@@ -19,7 +19,7 @@ table, th, td {
     !padding: 20px;
 }
 table.pos_fixed1 { 
-    position: fixed; 
+    position: absolute;
     top: 50px; 
     left: 30px 
 }
@@ -29,37 +29,37 @@ table.pos_fixed_center {
     left: 510px;
 }
 table.pos_fixed2 { 
-    position: fixed; 
+    position: absolute;
     top: 50px;
     left: 1000px 
 }
 input.pos_fixed_ac {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 50px
 }
 input.pos_fixed_cr {
-    position: fixed;
+    position: absolute;
     top: 50px;
     left: 100px
 }
 input.pos_fixed_sb {
-    position: fixed;
+    position: absolute;
     top: 250px;
     left: 100px
 }
 input.pos_fixed_ds {
-    position: fixed;
+    position: absolute;
     top: 300px;
     left: 50px
 }
 input.pos_fixed_co {
-    position: fixed;
+    position: absolute;
     top: 10px;
     left: 50px;
 }
 p.pos_fixed_do {
-    position: fixed;
+    position: absolute;
     color: white;
     top: 14px;
     left: 50px;
@@ -117,7 +117,7 @@ p.pos_fixed_do {
         lf = parseInt("511") + parseInt(b) * parseInt("40");
         lf = eval(lf);
         tp = 141 + a * 40;
-        fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         //alert(selected);
         //alert(a);
         //alert(b);
