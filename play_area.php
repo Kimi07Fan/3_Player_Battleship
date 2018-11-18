@@ -437,7 +437,7 @@
 	</script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
-<!-- <div class = "image"></div> -->
+<<div class = "image"></div>
 <p class = "pos_fixed_pl1"> Player 1</p>
 <p class = "pos_fixed_pl2"> Player 2</p>
 <p class = "pos_fixed_pl3"> Computer</p>
