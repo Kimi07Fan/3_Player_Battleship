@@ -119,7 +119,7 @@
             lf = parseInt("201") + parseInt(b) * parseInt("40");
             lf = eval(lf);
             tp = 101 + a * 40;
-            fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
+            fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
             //alert(selected);
             //alert(a);
             //alert(b);
@@ -378,16 +378,36 @@
         }
         function hit_or_miss(a, b, hit, id) {
             if (id == 2){  // Other Player
-                
+                tp = 101 + a * 40;
+                lf = 851 + b * 40;
+                if (hit != 0){
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                    document.body.appendChild(ac_h);
+                }
+                else {
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                }
+                fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
             }
-            if (id == 3) {
-                
-            }
-            
-            if (hit != 0){
-                ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Hit_cell.png");
-                ac.h.setAttribute("style", fnl);
+            if (id == 3) { // Computer
+                tp = 651 + a * 40;
+                lf = 521 + b * 40;
+                fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
+                if (hit != 0){
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                    document.body.appendChild(ac_h);
+                }
+                else {
+                    ac_h = document.createElement("IMG");
+                    ac_h.setAttribute("src", "Hit_cell.png");
+                    ac.h.setAttribute("style", fnl);
+                }
             }
         }
 	</script>
