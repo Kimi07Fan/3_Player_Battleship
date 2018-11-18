@@ -429,6 +429,11 @@
                 }
             }
         }
+    function check_cell(cell_number, h_or_m, player_id){
+        a = Math.floor(cell_number / 10);
+        b = cell_number % 10 - 1;
+        hit_or_miss(a, b, h_or_m, player_id);
+    }
 	</script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
