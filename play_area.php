@@ -380,6 +380,7 @@
             if (id == 2){  // Other Player
                 tp = 101 + a * 40;
                 lf = 851 + b * 40;
+                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
                 if (hit != 0){
                     ac_h = document.createElement("IMG");
                     ac_h.setAttribute("src", "Hit_cell.png");
@@ -391,12 +392,11 @@
                     ac_h.setAttribute("src", "Hit_cell.png");
                     ac.h.setAttribute("style", fnl);
                 }
-                fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
             }
             if (id == 3) { // Computer
                 tp = 651 + a * 40;
                 lf = 521 + b * 40;
-                fnl += "top: " + tp + "px; left: " + lf + "px; position: fixed;"
+                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
                 if (hit != 0){
                     ac_h = document.createElement("IMG");
                     ac_h.setAttribute("src", "Hit_cell.png");
