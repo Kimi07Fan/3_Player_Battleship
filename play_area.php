@@ -31,7 +31,7 @@
     }
     table.pos_fixed_2 {
         position: absolute;
-        left: 800px;
+        left: 850px;
         top: 100px;
     }
     table.pos_fixed_3 {
@@ -377,7 +377,13 @@
             place(a, b, ship, orient);
         }
         function hit_or_miss(a, b, hit, id) {
-            if id =
+            if (id == 2){  // Other Player
+                
+            }
+            if (id == 3) {
+                
+            }
+            
             if (hit != 0){
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
