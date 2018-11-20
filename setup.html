@@ -61,7 +61,7 @@ input.pos_fixed_co {
 p.pos_fixed_do {
     position: absolute;
     color: white;
-    top: 14px;
+    top: 330px;
     left: 50px;
 }
 .table {
@@ -372,7 +372,7 @@ p.pos_fixed_do {
 <input type = "image" src = "Cruiser_False.png" class = "pos_fixed_cr" onclick = "return select_cr()">
 <input type = "image" src = "Submarine_False.png" class = "pos_fixed_sb" onclick = "return select_sb()">
 <input type = "image" src = "Destroyer_False.png" class = "pos_fixed_ds" onclick = "return select_ds()">
-<input type = "button" value = "Change orientation" style = "top: 10px; left: 50px; position: fixed" onclick = "return change_ornt()">
+<input type = "button" value = "Change orientation" style = "top: 10px; left: 50px; position: absolute;" onclick = "return change_ornt()">
 <div>
 <table bgcolor = "586171" class = "pos_fixed_center">
 <tr>
@@ -496,15 +496,15 @@ p.pos_fixed_do {
 <td><input type = "button" class = "table" onclick = "place(9, 9)"></td>
 </tr>
 </table>
-<form method = "get" action = "index.php">
-    <input type = "image" src = "Back_to_menu.png" style = "left: 50px; top: 700px; position: absolute;" width = "100px" height = "50px">
+<form method = "get" action = "index.html">
+    <input type = "image" src = "Back_to_menu.png" style = "left: 50px; top: 370px; position: absolute;" width = "100px" height = "50px">
 </form>
 <form method = "get" action = "htp.html">
-    <input type = "image" src = "How_to_play.png" style = "left: 670px; top: 700px; position: absolute;" width = "100px" height = "50px">
+    <input type = "image" src = "How_to_play.png" style = "left: 50px; top: 430px; position: absolute;" width = "100px" height = "50px">
 </form>
 <form action="send_board.php" method="post" onsubmit="return send_board();">
     <input type="hidden" id="hiddenF" name="hiddenF" value="">
-    <input type = "submit" name = "play" id = "play" style = "left: 1200px; top: 730px; position: absolute;" value = "Let's Play!" width = "200px" height = "100px">
+    <input type = "submit" name = "play" id = "play" style = "left: 50px; top: 490px; position: absolute;" value = "Let's Play!" width = "200px" height = "100px">
     <!-- We need to make an image for this bit -->
 </form>
 </div>
