@@ -462,6 +462,10 @@
     function check_cell(cell_number, h_or_m, player_id){
         a = Math.floor(cell_number / 10);
         b = cell_number % 10 - 1;
+        if (b == -1) {
+            b = 9;
+            a = a - 1;
+        }
         hit_or_miss(a, b, h_or_m, player_id);
     }
     function show_turn(id) {
