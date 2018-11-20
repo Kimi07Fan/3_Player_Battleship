@@ -828,6 +828,14 @@
                     }
                 }            
         }
+        if($turn == $B1_id)
+            echo "<script>
+                    show_turn(1);
+        </script>";
+        else if($turn == $B2_id)
+            echo "<script>
+                    show_turn(2);
+        </script>";
 ?>
 <table bgcolor = "586171" class = "pos_fixed_2">
     <tr>
