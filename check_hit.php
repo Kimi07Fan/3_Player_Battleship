@@ -34,9 +34,41 @@
 					}
 			}
 	if($check_Shots)
+	{
+		$result = $mysqli->query("SELECT Board, Cell FROM Shots_" . $B1_id . "_" . $B2_id);
+			if($result->num_rows > 0)
+			{
+				while($row = $result->fetch_assoc())
+				{
+					echo $row['Board'], "&nbsp", $row['Cell'], "<br>";
+					if($row['Board'] == $B2_id && $row['Cell'] == $cell)
+					{
+						echo "ENTER1<br>";
+						goto last;
+					}
+				}
+			}
+
 		$mysqli->query("INSERT INTO Shots_" . $B1_id . "_" . $B2_id . " (Board , Cell, Hits) VALUES ('" . $B2_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
+	}
 	else
+	{
+		$result = $mysqli->query("SELECT Board, Cell FROM Shots_" . $B2_id . "_" . $B1_id);
+			if($result->num_rows > 0)
+			{
+				while($row = $result->fetch_assoc())
+				{
+					echo $row['Board'], "&nbsp", $row['Cell'], "<br>";
+					if($row['Board'] == $B2_id && $row['Cell'] == $cell)
+					{
+						echo "ENTER2<br>";
+						goto last;
+					}
+				}
+			}
+
 		$mysqli->query("INSERT INTO Shots_" . $B2_id . "_" . $B1_id . " (Board , Cell, Hits) VALUES ('" . $B2_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
+	}
 	if($check_Turns)
 	{
         $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id);
@@ -65,5 +97,6 @@
 				}
 			}
 	}
+	last:
 	header('Location: play_area.php?id1='. $B1_id . '&id2=' . $B2_id);
 ?>

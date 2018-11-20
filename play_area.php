@@ -3,6 +3,7 @@
 <head>
 	<title></title>
     <meta http-equiv="refresh" content="5" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
     body {
         margin:0;
@@ -105,6 +106,15 @@
         font-style: normal;
         font-size: 40px;
         color: red;
+    }
+    p.demo {
+        
+        
+        
+        font-family: "Times New Roman", Times, serif;
+        font-style: normal;
+        font-size: 50px;
+        color: black;
     }
 </style>
 	<script type="text/javascript">
@@ -478,6 +488,42 @@
 </head>
 <body> <!-- An image is needed. Will work on that.-->
 <!-- <div class = "image"></div> -->
+<p id="demo" style="text-align: center; font-size: 50px; margin-top: 0px;"></p>
+<script>
+    // Set the date we're counting down to
+    // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
+
+    var then = new Date().getSeconds();
+    then += 6
+    // Update the count down every 1 second
+    var x = setInterval(function()
+    {
+        // Get todays date and time
+        var now = new Date().getSeconds();
+        
+        // Find the distance between now and the count down date
+        var seconds = then - now;
+        // var seconds = (now%5) + 1;
+        
+        // Time calculations for days, hours, minutes and seconds
+        // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Output the result in an element with id="demo"
+        if (seconds > 0)
+            document.getElementById("demo").innerHTML = seconds;
+        
+        // If the count down is over, write some text 
+        if (distance < 0)
+        {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "EXPIRED";
+        }
+    }, 1000);
+</script>
+
 <p class = "pos_fixed_pl1"> Player 1</p>
 <p class = "pos_fixed_pl2"> Player 2</p>
 <p class = "pos_fixed_pl3"> Computer</p>
