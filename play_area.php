@@ -73,7 +73,9 @@
     .table {
     background: transparent;
     display: inline-block;
-    border: 2px solid black;
+    border: 2px;
+    border-style: solid;
+    border-color: #586171;
     height: 36px;
     width: 36px;
     }
