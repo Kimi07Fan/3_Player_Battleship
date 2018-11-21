@@ -459,35 +459,36 @@
                 }
             }
         }
-    function check_cell(cell_number, h_or_m, player_id){
-        a = Math.floor(cell_number / 10);
-        b = cell_number % 10 - 1;
-        if (b == -1) {
-            b = 9;
-            a = a - 1;
+        function check_cell(cell_number, h_or_m, player_id){
+            a = Math.floor(cell_number / 10);
+            b = cell_number % 10 - 1;
+            if (b == -1) {
+                b = 9;
+                a = a - 1;
+            }
+            hit_or_miss(a, b, h_or_m, player_id);
         }
-        hit_or_miss(a, b, h_or_m, player_id);
-    }
-    function show_turn(id) {
-        ac_h = document.createElement("IMG")
-        ac_h.setAttribute("src", "Turn.png")
-        if (id == 1){ // Player 1's Turn
-            ac_h.setAttribute("style", "top: 50px; left: 465px; position: absolute");
+        function show_turn(id) {
+            ac_h = document.createElement("IMG")
+            ac_h.setAttribute("src", "Turn.png")
+            if (id == 1){ // Player 1's Turn
+                ac_h.setAttribute("style", "top: 50px; left: 465px; position: absolute");
+            }
+            if (id == 2) { // Player 2's Turn
+                ac_h.setAttribute("style", "top: 50px; left: 1120px; position: absolute");
+            }
+            if (id == 3) {
+                ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
+            }
+            document.body.appendChild(ac_h);
         }
-        if (id == 2) { // Player 2's Turn
-            ac_h.setAttribute("style", "top: 50px; left: 1120px; position: absolute");
-        }
-        if (id == 3) {
-            ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
-        }
-        document.body.appendChild(ac_h);
-    }
-    function check_hit(cell, id1, id2, turn)
-        {
-            // alert("hit " + cell + " " + id1 + " " + id2 + " " + turn);
-            if(turn == id1)
-                location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2;
-        }
+        function 
+        function check_hit(cell, id1, id2, turn)
+            {
+                // alert("hit " + cell + " " + id1 + " " + id2 + " " + turn);
+                if(turn == id1)
+                    location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2;
+            }
 	</script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
