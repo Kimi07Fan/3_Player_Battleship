@@ -469,20 +469,147 @@
             hit_or_miss(a, b, h_or_m, player_id);
         }
         function show_turn(id) {
-            ac_h = document.createElement("IMG")
-            ac_h.setAttribute("src", "Turn.png")
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Turn.png");
             if (id == 1){ // Player 1's Turn
                 ac_h.setAttribute("style", "top: 50px; left: 465px; position: absolute");
             }
             if (id == 2) { // Player 2's Turn
                 ac_h.setAttribute("style", "top: 50px; left: 1120px; position: absolute");
             }
-            if (id == 3) {
+            if (id == 3) { // Computer's Turn
                 ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
             }
             document.body.appendChild(ac_h);
         }
-        function 
+        function show_hits_on_side(player_id, ship_id, no_of_hits){
+            if (player_id == 1) {
+                if (ship_id == 5) {
+                    lf = 20;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 100 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 4) {
+                    lf = 70;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 100 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 3) {
+                    lf = 70;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 270 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 2) {
+                    lf = 20;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 310 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+            }
+            if (player_id == 2) {
+                if (ship_id == 5) {
+                    lf = 1380;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 100 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 4) {
+                    lf = 1330;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 100 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 3) {
+                    lf = 1330;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 270 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 2) {
+                    lf = 1380;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 310 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+            }
+            if (player_id == 1) {
+                if (ship_id == 5) {
+                    lf = 420;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 650 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 4) {
+                    lf = 470;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 650 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 3) {
+                    lf = 470;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 820 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+                if (ship_id == 2) {
+                    lf = 420;
+                    for (i = 0; i < no_of_hits; i++) {
+                        top = 860 + i * 40;
+                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                        ac_h = document.createElement("IMG");
+                        ac_h.setAttribute("src", "Hit_cell.png");
+                        ac_h.setAttribute("style", fnl)
+                    }
+                }
+            }
+        }
         function check_hit(cell, id1, id2, turn)
             {
                 // alert("hit " + cell + " " + id1 + " " + id2 + " " + turn);
