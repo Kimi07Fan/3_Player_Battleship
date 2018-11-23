@@ -1160,18 +1160,37 @@
                 {
                     if($row["Board"] == $B1_id)
                     {
+                        $Hits1[$row['Hits']] = $Hits1[$row['Hits']] + 1;
                         echo "<script>
                                 check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 1);
                         </script>";
                     }
                     else if($row["Board"] == $B2_id)
                     {
+                        $Hits2[$row['Hits']] = $Hits2[$row['Hits']] + 1;
                         echo "<script>
                                 check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 2);
                         </script>";
                     }
                 }
-            }    
+            }
+        for($i = 0; $i <= 5; $i++)
+        {
+            if($Hits1[$i] != NULL && $i != 1 && $i != 0)
+            {
+                echo $i, "&nbsp&nbsp", $Hits1[$i], "<br>";
+                echo "<script>
+                            show_hits_on_side(1, " . $i . ", " . $Hits1[$i] . ");
+                    </script>";
+            }
+            if($Hits2[$i] != NULL && $i != 1 && $i != 0)
+            {
+                echo $i, "&nbsp&nbsp", $Hits2[$i], "<br>";
+                echo "<script>
+                            show_hits_on_side(2, " . $i . ", " . $Hits2[$i] . ");
+                    </script>";
+            }
+        }
 ?>
 <center>
 <table bgcolor = "586171" class = "pos_fixed_3">
