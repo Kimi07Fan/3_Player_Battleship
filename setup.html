@@ -128,19 +128,19 @@ p.pos_fixed_do {
             if (b > 5){
                 return;
             }
-            if (passing[10*a + b + 1] == 5) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             } 
-            if (passing[10*a + b + 2] == 5) {
+            if (passing[10*a + b + 2] != 0) {
                 return;
             } 
-            if (passing[10*a + b + 3] == 5) {
+            if (passing[10*a + b + 3] != 0) {
                 return;
             } 
-            if (passing[10*a + b + 4] == 5) {
+            if (passing[10*a + b + 4] != 0) {
                 return;
             } 
-            if (passing[10*a + b + 5] == 5) {
+            if (passing[10*a + b + 5] != 0) {
                 return;
             } 
             //alert("Say cheese?")
@@ -164,16 +164,16 @@ p.pos_fixed_do {
             if (b > 6){
                 return;
             }
-            if (passing[10*a + b + 1] == 4) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 2] == 4) {
+            if (passing[10*a + b + 2] != 0) {
                 return;
             }
-            if (passing[10*a + b + 3] == 4) {
+            if (passing[10*a + b + 3] != 0) {
                 return;
             }
-            if (passing[10*a + b + 4] == 4) {
+            if (passing[10*a + b + 4] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -194,13 +194,13 @@ p.pos_fixed_do {
             if (b > 7){
                 return;
             }
-            if (passing[10*a + b + 1] == 3) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 2] == 3) {
+            if (passing[10*a + b + 2] != 0) {
                 return;
             }
-            if (passing[10*a + b + 3] == 3) {
+            if (passing[10*a + b + 3] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -220,10 +220,10 @@ p.pos_fixed_do {
             if (b > 8){
                 return;
             }
-            if (passing[10*a + b + 1] == 2) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 2] == 2) {
+            if (passing[10*a + b + 2] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -241,19 +241,19 @@ p.pos_fixed_do {
             if (a > 5){
                 return;
             }
-            if (passing[10*a + b + 1] == 5) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 11] == 5) {
+            if (passing[10*a + b + 11] != 0) {
                 return;
             }
-            if (passing[10*a + b + 21] == 5) {
+            if (passing[10*a + b + 21] != 0) {
                 return;
             }
-            if (passing[10*a + b + 31] == 5) {
+            if (passing[10*a + b + 31] != 0) {
                 return;
             }
-            if (passing[10*a + b + 41] == 5) {
+            if (passing[10*a + b + 41] != 0) {
                 return;
             }
             //alert("Say cheese?")
@@ -277,16 +277,16 @@ p.pos_fixed_do {
             if (a > 6){
                 return;
             }
-            if (passing[10*a + b + 1] == 4) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 11] == 4) {
+            if (passing[10*a + b + 11] != 0) {
                 return;
             }
-            if (passing[10*a + b + 21] == 4) {
+            if (passing[10*a + b + 21] != 0) {
                 return;
             }
-            if (passing[10*a + b + 31] == 4) {
+            if (passing[10*a + b + 31] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -307,13 +307,13 @@ p.pos_fixed_do {
             if (a > 7){
                 return;
             }
-            if (passing[10*a + b + 1] == 3) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 11] == 3) {
+            if (passing[10*a + b + 11] != 0) {
                 return;
             }
-            if (passing[10*a + b + 21] == 3) {
+            if (passing[10*a + b + 21] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -333,10 +333,10 @@ p.pos_fixed_do {
             if (a > 8){
                 return;
             }
-            if (passing[10*a + b + 1] == 2) {
+            if (passing[10*a + b + 1] != 0) {
                 return;
             }
-            if (passing[10*a + b + 11] == 2) {
+            if (passing[10*a + b + 11] != 0) {
                 return;
             }
             var ac_h = document.createElement("IMG");
@@ -352,14 +352,18 @@ p.pos_fixed_do {
          }
         //alert(passing);
     }
-    function send_board()
-    {
-        if ((selected.includes("ac")) && (selected.includes("cr")) && (selected.includes("sb")) && (selected.includes("bs")){
-            document.getElementById("hiddenF").value = passing;
+    function check() {
+        if ((completed.includes("ac") == true) && (completed.includes("cr") == true) && (completed.includes("sb") == true) && (completed.includes("ds") == true)){
+            var k;
         }
         else {
-            alert ("Put all your ships first!")
+            alert("Put all your ships first!");
         }
+    }
+
+    function send_board()
+    {
+        document.getElementById("hiddenF").value = passing;
     }
     //function test() {
     //    //alert("test");
@@ -509,7 +513,7 @@ p.pos_fixed_do {
 </form>
 <form action="send_board.php" method="post" onsubmit="return send_board();">
     <input type="hidden" id="hiddenF" name="hiddenF" value="">
-    <input type = "submit" name = "play" id = "play" style = "left: 50px; top: 490px; position: absolute;" value = "Let's Play!" width = "200px" height = "100px">
+    <input type = "submit" name = "play" id = "play" style = "left: 50px; top: 490px; position: absolute;" value = "Let's Play!" width = "200px" height = "100px" onmouseover = check()>
     <!-- We need to make an image for this bit -->
 </form>
 </div>
