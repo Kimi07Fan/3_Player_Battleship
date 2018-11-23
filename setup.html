@@ -354,7 +354,12 @@ p.pos_fixed_do {
     }
     function send_board()
     {
-        document.getElementById("hiddenF").value = passing;
+        if ((selected.includes("ac")) && (selected.includes("cr")) && (selected.includes("sb")) && (selected.includes("bs")){
+            document.getElementById("hiddenF").value = passing;
+        }
+        else {
+            alert ("Put all your ships first!")
+        }
     }
     //function test() {
     //    //alert("test");
