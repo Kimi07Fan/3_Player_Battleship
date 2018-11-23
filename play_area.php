@@ -117,518 +117,665 @@
         color: black;
     }
 </style>
-	<script type="text/javascript">
-        function place(a, b, selected, orient){
-            // alert(a);
-            // alert(b);
-            // alert(selected);
-            // alert(orient);
-            var fnl = ""
-            lf = parseInt("201") + parseInt(b) * parseInt("40");
-            lf = eval(lf);
-            tp = 101 + a * 40;
-            fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute"
-            //alert(selected);
-            //alert(a);
-            //alert(b);
-            // if (completed.includes(selected) == true) {
-            //     return;
-            // }
-            if ((selected == "ac") && (orient == "Horizontal")) {
-                // if (b > 5){
-                //     return;
-                // }
-                // if (passing[10*a + b + 1] == 5) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 2] == 5) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 3] == 5) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 4] == 5) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 5] == 5) {
-                //     return;
-                // }
-                // alert("Say cheese?")
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("ac");
-                //alert(completed);
-                // passing[10*a + b + 1] = 5;
-                // passing[10*a + b + 2] = 5;
-                // passing[10*a + b + 3] = 5;
-                // passing[10*a + b + 4] = 5;
-                // passing[10*a + b + 5] = 5;
-                //alert(passing);
-            }
-            if ((selected == "cr") && (orient == "Horizontal")) {
-                //alert("Say cheese?")
-                // if (b > 6){
-                //     return;
-                // }
-                // if (passing[10*a + b + 1] == 4) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 2] == 4) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 3] == 4) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 4] == 4) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Cruiser_True.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("cr");
-                //alert(completed);
-                // passing[10*a + b + 1] = 4;
-                // passing[10*a + b + 2] = 4;
-                // passing[10*a + b + 3] = 4;
-                // passing[10*a + b + 4] = 4;
-            }
-            if ((selected == "sb") && (orient == "Horizontal")) {
-                //alert("Say cheese?")
-                // if (b > 7){
-                //     return;
-                // }
-                // if (passing[10*a + b + 1] == 3) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 2] == 3) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 3] == 3) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Submarine_True.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("sb");
-                //alert(completed);
-                // passing[10*a + b + 1] = 3;
-                // passing[10*a + b + 2] = 3;
-                // passing[10*a + b + 3] = 3;
-            }
-            if ((selected == "ds") && (orient == "Horizontal")) {
-                //alert("Say cheese?")
-                // if (b > 8){
-                //     return;
-                // }
-                // if (passing[10*a + b + 1] == 2) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 2] == 2) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Destroyer_True.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("ds");
-                //alert(completed);
-                // passing[10*a + b + 1] = 2;
-                // passing[10*a + b + 2] = 2;
-            }
-            if ((selected == "ac") && (orient == "Vertical")) {
-                // if (a > 5){
-                //     return;
-                // }
-                // // if (passing[10*a + b + 1] == 5) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 11] == 5) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 21] == 5) {
-                //     return;
-                // }
-                // if (passing[10*a + b + 31] == 5) {
-                    // return;
-                // }
-                // // if (passing[10*a + b + 41] == 5) {
-                //     return;
-                // }
-                //alert("Say cheese?")
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Aircraft_Carrier_False.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("ac");
-                //alert(completed);
-                // passing[10*a + b + 1] = 5;
-                // passing[10*a + b + 11] = 5;
-                // passing[10*a + b + 21] = 5;
-                // passing[10*a + b + 31] = 5;
-                // passing[10*a + b + 41] = 5;
-                //alert(passing);
-            }
-            if ((selected == "cr") && (orient == "Vertical")) {
-                //alert("Say cheese?")
-                // if (a > 6){
-                //     return;
-                // }
-                // // if (passing[10*a + b + 1] == 4) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 11] == 4) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 21] == 4) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 31] == 4) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Cruiser_False.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("cr");
-                //alert(completed);
-                // passing[10*a + b + 1] = 4;
-                // passing[10*a + b + 11] = 4;
-                // passing[10*a + b + 21] = 4;
-                // passing[10*a + b + 31] = 4;
-            }
-            if ((selected == "sb") && (orient == "Vertical")) {
-                //alert("Say cheese?")
-                // if (a > 7){
-                //     return;
-                // }
-                // // if (passing[10*a + b + 1] == 3) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 11] == 3) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 21] == 3) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Submarine_False.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("sb");
-                //alert(completed);
-                // passing[10*a + b + 1] = 3;
-                // passing[10*a + b + 11] = 3;
-                // passing[10*a + b + 21] = 3;
-            }
-            if ((selected == "ds") && (orient == "Vertical")) {
-                //alert("Say cheese?")
-                // if (a > 8){
-                //     return;
-                // }
-                // // if (passing[10*a + b + 1] == 2) {
-                //     return;
-                // }
-                // // if (passing[10*a + b + 11] == 2) {
-                //     return;
-                // }
-                var ac_h = document.createElement("IMG");
-                ac_h.setAttribute("src", "Destroyer_False.png");
-                ac_h.setAttribute("style", fnl);
-                //alert("I'm here!");
-                //alert(fnl);
-                document.body.appendChild(ac_h);
-                completed.push("ds");
-                //alert(completed);
-                // passing[10*a + b + 1] = 2;
-                // passing[10*a + b + 11] = 2;
-            }
-            // alert(passing);
-        }
-        function put_my_ships(ship_id, orient, cell_number)
-        {
-            // alert("Going Inside");
-            // alert(ship_id);
-            // alert(orient);
-            // alert(cell_number);
-            a = Math.floor(cell_number / 10);
-            b = cell_number % 10 - 1;
-            // alert(a);
-            // alert(b); 
-            if (b == -1) {
-                b = 9;
-                a = a - 1;
-            }       
-            if (ship_id == 5){
-                ship = "ac";
-            }
-            if (ship_id == 4){
-                ship = "cr";
-            }
-            if (ship_id == 3){
-                ship = "sb";
-            }
-            if (ship_id == 2){
-                ship = "ds";
-            }
-            place(a, b, ship, orient);
-        }
-        function hit_or_miss(a, b, hit, id) {
-            /* See if you do need the thing for the player who is playing. You may need it */
-            // alert(a);
-            // alert(b);
-            // alert(hit);
-            // alert(id);
-            var fnl = "";
-            if (id == 1){  // Me
-                tp = 101 + a * 41;
-                lf = 201 + b * 40;
-                //alert(tp, lf)
-                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
-                if (hit != 0){
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Hit_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-                else {
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Miss_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-            }
-
-            if (id == 2){  // Other Player
-                // alert(a);
-                // alert(b);
-                // alert(hit);
-                // alert(id);
-                tp = 101 + a * 40;
-                // alert(tp);
-                lf = 851 + b * 40;
-                // alert(lf);
-                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                // alert (fnl);
-                if (hit != 0){
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Hit_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-                else {
-                    // alert("Hi");
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Miss_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-            }
-            if (id == 3) { // Computer
-                tp = 651 + a * 40;
-                lf = 521 + b * 40;
-                fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
-                if (hit != 0){
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Hit_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-                else {
-                    ac_h = document.createElement("IMG");
-                    ac_h.setAttribute("src", "Miss_cell.png");
-                    ac_h.setAttribute("style", fnl);
-                    document.body.appendChild(ac_h);
-                }
-            }
-        }
-        function check_cell(cell_number, h_or_m, player_id){
-            a = Math.floor(cell_number / 10);
-            b = cell_number % 10 - 1;
-            if (b == -1) {
-                b = 9;
-                a = a - 1;
-            }
-            hit_or_miss(a, b, h_or_m, player_id);
-        }
-        function show_turn(id) {
+<script type="text/javascript">
+function place(a, b, selected, orient){
+    // alert(a);
+    // alert(b);
+    // alert(selected);
+    // alert(orient);
+    var fnl = ""
+    lf = parseInt("201") + parseInt(b) * parseInt("40");
+    lf = eval(lf);
+    tp = 101 + a * 40;
+    fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute"
+    //alert(selected);
+    //alert(a);
+    //alert(b);
+    // if (completed.includes(selected) == true) {
+    //     return;
+    // }
+    if ((selected == "ac") && (orient == "Horizontal")) {
+        // if (b > 5){
+        //     return;
+        // }
+        // if (passing[10*a + b + 1] == 5) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 2] == 5) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 3] == 5) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 4] == 5) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 5] == 5) {
+        //     return;
+        // }
+        // alert("Say cheese?")
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("ac");
+        //alert(completed);
+        // passing[10*a + b + 1] = 5;
+        // passing[10*a + b + 2] = 5;
+        // passing[10*a + b + 3] = 5;
+        // passing[10*a + b + 4] = 5;
+        // passing[10*a + b + 5] = 5;
+        //alert(passing);
+    }
+    if ((selected == "cr") && (orient == "Horizontal")) {
+        //alert("Say cheese?")
+        // if (b > 6){
+        //     return;
+        // }
+        // if (passing[10*a + b + 1] == 4) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 2] == 4) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 3] == 4) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 4] == 4) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Cruiser_True.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("cr");
+        //alert(completed);
+        // passing[10*a + b + 1] = 4;
+        // passing[10*a + b + 2] = 4;
+        // passing[10*a + b + 3] = 4;
+        // passing[10*a + b + 4] = 4;
+    }
+    if ((selected == "sb") && (orient == "Horizontal")) {
+        //alert("Say cheese?")
+        // if (b > 7){
+        //     return;
+        // }
+        // if (passing[10*a + b + 1] == 3) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 2] == 3) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 3] == 3) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Submarine_True.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("sb");
+        //alert(completed);
+        // passing[10*a + b + 1] = 3;
+        // passing[10*a + b + 2] = 3;
+        // passing[10*a + b + 3] = 3;
+    }
+    if ((selected == "ds") && (orient == "Horizontal")) {
+        //alert("Say cheese?")
+        // if (b > 8){
+        //     return;
+        // }
+        // if (passing[10*a + b + 1] == 2) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 2] == 2) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Destroyer_True.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("ds");
+        //alert(completed);
+        // passing[10*a + b + 1] = 2;
+        // passing[10*a + b + 2] = 2;
+    }
+    if ((selected == "ac") && (orient == "Vertical")) {
+        // if (a > 5){
+        //     return;
+        // }
+        // // if (passing[10*a + b + 1] == 5) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 11] == 5) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 21] == 5) {
+        //     return;
+        // }
+        // if (passing[10*a + b + 31] == 5) {
+        // return;
+        // }
+        // // if (passing[10*a + b + 41] == 5) {
+        //     return;
+        // }
+        //alert("Say cheese?")
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Aircraft_Carrier_False.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("ac");
+        //alert(completed);
+        // passing[10*a + b + 1] = 5;
+        // passing[10*a + b + 11] = 5;
+        // passing[10*a + b + 21] = 5;
+        // passing[10*a + b + 31] = 5;
+        // passing[10*a + b + 41] = 5;
+        //alert(passing);
+    }
+    if ((selected == "cr") && (orient == "Vertical")) {
+        //alert("Say cheese?")
+        // if (a > 6){
+        //     return;
+        // }
+        // // if (passing[10*a + b + 1] == 4) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 11] == 4) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 21] == 4) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 31] == 4) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Cruiser_False.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("cr");
+        //alert(completed);
+        // passing[10*a + b + 1] = 4;
+        // passing[10*a + b + 11] = 4;
+        // passing[10*a + b + 21] = 4;
+        // passing[10*a + b + 31] = 4;
+    }
+    if ((selected == "sb") && (orient == "Vertical")) {
+        //alert("Say cheese?")
+        // if (a > 7){
+        //     return;
+        // }
+        // // if (passing[10*a + b + 1] == 3) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 11] == 3) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 21] == 3) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Submarine_False.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("sb");
+        //alert(completed);
+        // passing[10*a + b + 1] = 3;
+        // passing[10*a + b + 11] = 3;
+        // passing[10*a + b + 21] = 3;
+    }
+    if ((selected == "ds") && (orient == "Vertical")) {
+        //alert("Say cheese?")
+        // if (a > 8){
+        //     return;
+        // }
+        // // if (passing[10*a + b + 1] == 2) {
+        //     return;
+        // }
+        // // if (passing[10*a + b + 11] == 2) {
+        //     return;
+        // }
+        var ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "Destroyer_False.png");
+        ac_h.setAttribute("style", fnl);
+        //alert("I'm here!");
+        //alert(fnl);
+        document.body.appendChild(ac_h);
+        completed.push("ds");
+        //alert(completed);
+        // passing[10*a + b + 1] = 2;
+        // passing[10*a + b + 11] = 2;
+    }
+    // alert(passing);
+}
+function put_my_ships(ship_id, orient, cell_number)
+{
+    // alert("Going Inside");
+    // alert(ship_id);
+    // alert(orient);
+    // alert(cell_number);
+    a = Math.floor(cell_number / 10);
+    b = cell_number % 10 - 1;
+    // alert(a);
+    // alert(b);
+    if (b == -1) {
+        b = 9;
+        a = a - 1;
+    }
+    if (ship_id == 5){
+        ship = "ac";
+    }
+    if (ship_id == 4){
+        ship = "cr";
+    }
+    if (ship_id == 3){
+        ship = "sb";
+    }
+    if (ship_id == 2){
+        ship = "ds";
+    }
+    place(a, b, ship, orient);
+}
+function hit_or_miss(a, b, hit, id) {
+    /* See if you do need the thing for the player who is playing. You may need it */
+    // alert(a);
+    // alert(b);
+    // alert(hit);
+    // alert(id);
+    var fnl = "";
+    if (id == 1){  // Me
+        tp = 101 + a * 41;
+        lf = 201 + b * 40;
+        //alert(tp, lf)
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
+        if (hit != 0){
             ac_h = document.createElement("IMG");
-            ac_h.setAttribute("src", "Turn.png");
-            if (id == 1){ // Player 1's Turn
-                ac_h.setAttribute("style", "top: 50px; left: 465px; position: absolute");
-            }
-            if (id == 2) { // Player 2's Turn
-                ac_h.setAttribute("style", "top: 50px; left: 1120px; position: absolute");
-            }
-            if (id == 3) { // Computer's Turn
-                ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
-            }
+            ac_h.setAttribute("src", "Hit_cell.png");
+            ac_h.setAttribute("style", fnl);
             document.body.appendChild(ac_h);
         }
-        function show_hits_on_side(player_id, ship_id, no_of_hits){
-            if (player_id == 1) {
-                if (ship_id == 5) {
-                    lf = 20;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 100 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 4) {
-                    lf = 70;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 100 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 3) {
-                    lf = 70;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 270 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 2) {
-                    lf = 20;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 310 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
+        else {
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Miss_cell.png");
+            ac_h.setAttribute("style", fnl);
+            document.body.appendChild(ac_h);
+        }
+    }
+    
+    if (id == 2){  // Other Player
+        // alert(a);
+        // alert(b);
+        // alert(hit);
+        // alert(id);
+        tp = 101 + a * 40;
+        // alert(tp);
+        lf = 851 + b * 40;
+        // alert(lf);
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+        // alert (fnl);
+        if (hit != 0){
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Hit_cell.png");
+            ac_h.setAttribute("style", fnl);
+            document.body.appendChild(ac_h);
+        }
+        else {
+            // alert("Hi");
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Miss_cell.png");
+            ac_h.setAttribute("style", fnl);
+            document.body.appendChild(ac_h);
+        }
+    }
+    if (id == 3) { // Computer
+        tp = 651 + a * 40;
+        lf = 521 + b * 40;
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
+        if (hit != 0){
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Hit_cell.png");
+            ac_h.setAttribute("style", fnl);
+            document.body.appendChild(ac_h);
+        }
+        else {
+            ac_h = document.createElement("IMG");
+            ac_h.setAttribute("src", "Miss_cell.png");
+            ac_h.setAttribute("style", fnl);
+            document.body.appendChild(ac_h);
+        }
+    }
+}
+function check_cell(cell_number, h_or_m, player_id){
+    a = Math.floor(cell_number / 10);
+    b = cell_number % 10 - 1;
+    if (b == -1) {
+        b = 9;
+        a = a - 1;
+    }
+    hit_or_miss(a, b, h_or_m, player_id);
+}
+function show_turn(id) {
+    ac_h = document.createElement("IMG");
+    ac_h.setAttribute("src", "Turn.png");
+    if (id == 1){ // Player 1's Turn
+        ac_h.setAttribute("style", "top: 50px; left: 465px; position: absolute");
+    }
+    if (id == 2) { // Player 2's Turn
+        ac_h.setAttribute("style", "top: 50px; left: 1120px; position: absolute");
+    }
+    if (id == 3) { // Computer's Turn
+        ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
+    }
+    document.body.appendChild(ac_h);
+}
+function show_hits_on_side(player_id, ship_id, no_of_hits){
+    if (player_id == 1) {
+        if (ship_id == 5) {
+            lf = 20;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 100 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
             }
-            if (player_id == 2) {
-                if (ship_id == 5) {
-                    lf = 1380;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 100 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 4) {
-                    lf = 1330;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 100 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 3) {
-                    lf = 1330;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 270 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 2) {
-                    lf = 1380;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 310 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
+        }
+        if (ship_id == 4) {
+            lf = 70;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 100 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
             }
-            if (player_id == 1) {
-                if (ship_id == 5) {
-                    lf = 420;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 650 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
+        }
+        if (ship_id == 3) {
+            lf = 70;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 270 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 2) {
+            lf = 20;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 310 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+    }
+    if (player_id == 2) {
+        if (ship_id == 5) {
+            lf = 1380;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 100 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 4) {
+            lf = 1330;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 100 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 3) {
+            lf = 1330;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 270 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 2) {
+            lf = 1380;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 310 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+    }
+    if (player_id == 1) {
+        if (ship_id == 5) {
+            lf = 420;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 650 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 4) {
+            lf = 470;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 650 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 3) {
+            lf = 470;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 820 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+        if (ship_id == 2) {
+            lf = 420;
+            for (i = 0; i < no_of_hits; i++) {
+                top = 860 + i * 40;
+                fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
+                ac_h = document.createElement("IMG");
+                ac_h.setAttribute("src", "Hit_cell.png");
+                ac_h.setAttribute("style", fnl)
+            }
+        }
+    }
+}
+passing = []
+for (i = 1; i < 101; i++) {
+    passing[i] = 0;
+}
+function check_validity_and_place(ship_id, orient, a, b){
+    if ((ship_id == 5) && (orient == "Horizontal")) {
+        if (b > 5) {
+            return false;
+        }
+        passing[10*a + b + 1] = 5;
+        passing[10*a + b + 2] = 5;
+        passing[10*a + b + 3] = 5;
+        passing[10*a + b + 4] = 5;
+        passing[10*a + b + 5] = 5;
+    }
+    if ((ship_id == 4) && (orient == "Horizontal")) {
+        if (b > 6) {
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 2] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 3] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 4] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 4;
+        passing[10*a + b + 2] = 4;
+        passing[10*a + b + 3] = 4;
+        passing[10*a + b + 4] = 4;
+    }
+    if ((selected == "sb") && (orient == "Horizontal")) {
+        if (b > 7){
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 2] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 3] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 3;
+        passing[10*a + b + 2] = 3;
+        passing[10*a + b + 3] = 3;
+    }
+    if ((selected == "ds") && (orient == "Horizontal")) {
+        if (b > 8){
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 2] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 2;
+        passing[10*a + b + 2] = 2;
+    }
+    if ((selected == "ac") && (orient == "Vertical")) {
+        if (a > 5){
+            return false;
+            passing[10*a + b + 1] = 5;
+            passing[10*a + b + 11] = 5;
+            passing[10*a + b + 21] = 5;
+            passing[10*a + b + 31] = 5;
+            passing[10*a + b + 41] = 5;
+        }
+        if ((selected == "cr") && (orient == "Vertical")) {
+            if (a > 6){
+                return false;
+            }
+            if (passing[10*a + b + 1] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 11] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 21] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 31] != 0) {
+                return false;
+            }
+            passing[10*a + b + 1] = 4;
+            passing[10*a + b + 11] = 4;
+            passing[10*a + b + 21] = 4;
+            passing[10*a + b + 31] = 4;
+        }
+        if ((selected == "sb") && (orient == "Vertical")) {
+            if (a > 7){
+                return false;
+            }
+            if (passing[10*a + b + 1] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 11] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 21] != 0) {
+                return false;
+            }
+            passing[10*a + b + 1] = 3;
+            passing[10*a + b + 11] = 3;
+            passing[10*a + b + 21] = 3;
+        }
+        if ((selected == "ds") && (orient == "Vertical")) {
+            if (a > 8){
+                return false;
+            }
+            if (passing[10*a + b + 1] != 0) {
+                return false;
+            }
+            if (passing[10*a + b + 11] != 0) {
+                return false;
+            }
+            passing[10*a + b + 1] = 2;
+            passing[10*a + b + 11] = 2;
+        }
+        return true;
+    }
+    function create_comp_board(){
+        var i;
+        var direction = []
+        direction[0] = "Horizontal";
+        direction[1] = "Vertical";
+        var random_1 = [0, 1, 2, 7, 8, 9]
+        var random_2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+        for (i = 5; i > 1; i--) {
+            var flag = false
+            while (flag == False){
+                var dir = direction[Math.floor(Math.random() * direction.length)];
+                var rand_1 = random_1[Math.floor(Math.random() * random_1.length)];
+                var rand_2 = random_2[Math.floor(Math.random() * random_2.length)];
+                if (dir == "Horizontal") {
+                    var ok = check_validity_and_place(i, rand, rand_1, rand_2);
+                    if (ok == true){
+                        flag = true;
+                    }
+                    else {
+                        continue;
                     }
                 }
-                if (ship_id == 4) {
-                    lf = 470;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 650 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
+                if (dir == "Vertical") {
+                    var ok = check_validity_and_place(i, rand, rand_2, rand_1);
+                    if (ok == true){
+                        flag = true;
                     }
-                }
-                if (ship_id == 3) {
-                    lf = 470;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 820 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
-                    }
-                }
-                if (ship_id == 2) {
-                    lf = 420;
-                    for (i = 0; i < no_of_hits; i++) {
-                        tp = 860 + i * 40;
-                        fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-                        ac_h = document.createElement("IMG");
-                        ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl);
-                        document.body.appendChild(ac_h);
+                    else {
+                        continue;
                     }
                 }
             }
         }
-        function check_hit(cell, id1, id2, turn)
-            {
-                // alert("hit " + cell + " " + id1 + " " + id2 + " " + turn);
-                if(turn == id1)
-                    location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2;
-            }
-	</script>
+        alert(passing);
+    }
+
+
+
 </head>
 <body> <!-- An image is needed. Will work on that.-->
 <!-- <div class = "image"></div> -->
