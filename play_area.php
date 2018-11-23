@@ -487,41 +487,45 @@
                 if (ship_id == 5) {
                     lf = 20;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 100 + i * 40;
+                        tp = 100 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 4) {
                     lf = 70;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 100 + i * 40;
+                        tp = 100 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 3) {
                     lf = 70;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 270 + i * 40;
+                        tp = 270 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 2) {
                     lf = 20;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 310 + i * 40;
+                        tp = 310 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
             }
@@ -529,41 +533,45 @@
                 if (ship_id == 5) {
                     lf = 1380;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 100 + i * 40;
+                        tp = 100 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 4) {
                     lf = 1330;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 100 + i * 40;
+                        tp = 100 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 3) {
                     lf = 1330;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 270 + i * 40;
+                        tp = 270 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 2) {
                     lf = 1380;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 310 + i * 40;
+                        tp = 310 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
             }
@@ -571,41 +579,45 @@
                 if (ship_id == 5) {
                     lf = 420;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 650 + i * 40;
+                        tp = 650 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 4) {
                     lf = 470;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 650 + i * 40;
+                        tp = 650 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 3) {
                     lf = 470;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 820 + i * 40;
+                        tp = 820 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
                 if (ship_id == 2) {
                     lf = 420;
                     for (i = 0; i < no_of_hits; i++) {
-                        top = 860 + i * 40;
+                        tp = 860 + i * 40;
                         fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                         ac_h = document.createElement("IMG");
                         ac_h.setAttribute("src", "Hit_cell.png");
-                        ac_h.setAttribute("style", fnl)
+                        ac_h.setAttribute("style", fnl);
+                        document.body.appendChild(ac_h);
                     }
                 }
             }
@@ -1179,6 +1191,7 @@
             if($Hits1[$i] != NULL && $i != 1 && $i != 0)
             {
                 echo $i, "&nbsp&nbsp", $Hits1[$i], "<br>";
+                $Hitted_1 = $Hitted_1 + $Hits1[$i];
                 echo "<script>
                             show_hits_on_side(1, " . $i . ", " . $Hits1[$i] . ");
                     </script>";
@@ -1186,10 +1199,16 @@
             if($Hits2[$i] != NULL && $i != 1 && $i != 0)
             {
                 echo $i, "&nbsp&nbsp", $Hits2[$i], "<br>";
+                $Hitted_2 = $Hitted_2 + $Hits2[$i];
                 echo "<script>
                             show_hits_on_side(2, " . $i . ", " . $Hits2[$i] . ");
                     </script>";
             }
+        }
+        echo $Hitted_1, "<br>", $Hitted_2;
+        if($Hitted_1 == 14)
+        {
+
         }
 ?>
 <center>
