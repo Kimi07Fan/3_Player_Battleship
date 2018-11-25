@@ -954,7 +954,13 @@ function the_computer_plays(board_1, board_2, computer_board) {
     pl_2_array = evaluate_board(board_2);
     comp_array = evaluate_board(computer_board);
     who_to_hit = 0;
-    if (comp_array[5] >= 9) {
+    if (pl_1_array[5] == 14) {
+        who_to_hit = 2;
+    }
+    else if (pl_2_array[5] == 14) {
+        who_to_hit = 1;
+    }
+    else if (comp_array[5] >= 9) {
         if (pl_1_array[5] > pl_2_array[5]) {
             who_to_hit = 1;
         }
