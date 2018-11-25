@@ -362,8 +362,7 @@ function place(a, b, selected, orient){
     }
     // alert(passing);
 }
-function put_my_ships(ship_id, orient, cell_number)
-{
+function put_my_ships(ship_id, orient, cell_number){
     // alert("Going Inside");
     // alert(ship_id);
     // alert(orient);
@@ -398,7 +397,7 @@ function hit_or_miss(a, b, hit, id) {
     // alert(id);
     var fnl = "";
     if (id == 1){  // Me
-        tp = 101 + a * 41;
+        tp = 101 + a * 40;
         lf = 201 + b * 40;
         //alert(tp, lf)
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
@@ -446,12 +445,14 @@ function hit_or_miss(a, b, hit, id) {
         lf = 521 + b * 40;
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         if (hit != 0){
+            // alert("Hi");
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
             document.body.appendChild(ac_h);
         }
         else {
+            // alert("Hi");
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Miss_cell.png");
             ac_h.setAttribute("style", fnl);
@@ -482,46 +483,63 @@ function show_turn(id) {
     }
     document.body.appendChild(ac_h);
 }
+function check_hit_2(cell, id1, id2, id3, turn)
+{
+    // alert("hit " + cell);
+    if(turn == id1)
+        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+}
+function check_hit_3(cell, id1, id2, id3, turn)
+{
+    // alert("hit " + cell);
+    if(turn == id1)
+        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
+}
 function show_hits_on_side(player_id, ship_id, no_of_hits){
     if (player_id == 1) {
         if (ship_id == 5) {
             lf = 20;
             for (i = 0; i < no_of_hits; i++) {
-                top = 100 + i * 40;
+                tp = 100 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 4) {
             lf = 70;
             for (i = 0; i < no_of_hits; i++) {
-                top = 100 + i * 40;
+                tp = 100 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 3) {
+            // alert("A1");
             lf = 70;
             for (i = 0; i < no_of_hits; i++) {
-                top = 270 + i * 40;
+                tp = 270 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 2) {
             lf = 20;
             for (i = 0; i < no_of_hits; i++) {
-                top = 310 + i * 40;
+                tp = 310 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
     }
@@ -529,92 +547,103 @@ function show_hits_on_side(player_id, ship_id, no_of_hits){
         if (ship_id == 5) {
             lf = 1380;
             for (i = 0; i < no_of_hits; i++) {
-                top = 100 + i * 40;
+                tp = 100 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 4) {
             lf = 1330;
             for (i = 0; i < no_of_hits; i++) {
-                top = 100 + i * 40;
+                tp = 100 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 3) {
             lf = 1330;
             for (i = 0; i < no_of_hits; i++) {
-                top = 270 + i * 40;
+                tp = 270 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 2) {
             lf = 1380;
             for (i = 0; i < no_of_hits; i++) {
-                top = 310 + i * 40;
+                tp = 310 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
     }
-    if (player_id == 1) {
+    if (player_id == 3
+        ) {
         if (ship_id == 5) {
             lf = 420;
             for (i = 0; i < no_of_hits; i++) {
-                top = 650 + i * 40;
+                tp = 650 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 4) {
             lf = 470;
             for (i = 0; i < no_of_hits; i++) {
-                top = 650 + i * 40;
+                tp = 650 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 3) {
             lf = 470;
             for (i = 0; i < no_of_hits; i++) {
-                top = 820 + i * 40;
+                tp = 820 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
         if (ship_id == 2) {
             lf = 420;
             for (i = 0; i < no_of_hits; i++) {
-                top = 860 + i * 40;
+                tp = 860 + i * 40;
                 fnl = "top: " + tp + "px; left: " + lf + "px; position: absolute;";
                 ac_h = document.createElement("IMG");
                 ac_h.setAttribute("src", "Hit_cell.png");
-                ac_h.setAttribute("style", fnl)
+                ac_h.setAttribute("style", fnl);
+                document.body.appendChild(ac_h);
             }
         }
     }
 }
-passing = []
-for (i = 1; i < 101; i++) {
-    passing[i] = 0;
-}
+var passing = [];
+var i;
+    for (i = 1; i < 101; i++) {
+        passing[i] = 0;
+    }
 function check_validity_and_place(ship_id, orient, a, b){
+    // alert(passing);
     if ((ship_id == 5) && (orient == "Horizontal")) {
         if (b > 5) {
             return false;
@@ -624,6 +653,8 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 3] = 5;
         passing[10*a + b + 4] = 5;
         passing[10*a + b + 5] = 5;
+        // alert("Hey1");
+        return true;
     }
     if ((ship_id == 4) && (orient == "Horizontal")) {
         if (b > 6) {
@@ -645,8 +676,10 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 2] = 4;
         passing[10*a + b + 3] = 4;
         passing[10*a + b + 4] = 4;
+        // alert("Hey2");
+        return true;
     }
-    if ((selected == "sb") && (orient == "Horizontal")) {
+    if ((ship_id == 3) && (orient == "Horizontal")) {
         if (b > 7){
             return false;
         }
@@ -662,8 +695,10 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 1] = 3;
         passing[10*a + b + 2] = 3;
         passing[10*a + b + 3] = 3;
+        // alert("Hey3");
+        return true;
     }
-    if ((selected == "ds") && (orient == "Horizontal")) {
+    if ((ship_id == 2) && (orient == "Horizontal")) {
         if (b > 8){
             return false;
         }
@@ -675,107 +710,139 @@ function check_validity_and_place(ship_id, orient, a, b){
         }
         passing[10*a + b + 1] = 2;
         passing[10*a + b + 2] = 2;
-    }
-    if ((selected == "ac") && (orient == "Vertical")) {
-        if (a > 5){
-            return false;
-            passing[10*a + b + 1] = 5;
-            passing[10*a + b + 11] = 5;
-            passing[10*a + b + 21] = 5;
-            passing[10*a + b + 31] = 5;
-            passing[10*a + b + 41] = 5;
-        }
-        if ((selected == "cr") && (orient == "Vertical")) {
-            if (a > 6){
-                return false;
-            }
-            if (passing[10*a + b + 1] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 11] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 21] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 31] != 0) {
-                return false;
-            }
-            passing[10*a + b + 1] = 4;
-            passing[10*a + b + 11] = 4;
-            passing[10*a + b + 21] = 4;
-            passing[10*a + b + 31] = 4;
-        }
-        if ((selected == "sb") && (orient == "Vertical")) {
-            if (a > 7){
-                return false;
-            }
-            if (passing[10*a + b + 1] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 11] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 21] != 0) {
-                return false;
-            }
-            passing[10*a + b + 1] = 3;
-            passing[10*a + b + 11] = 3;
-            passing[10*a + b + 21] = 3;
-        }
-        if ((selected == "ds") && (orient == "Vertical")) {
-            if (a > 8){
-                return false;
-            }
-            if (passing[10*a + b + 1] != 0) {
-                return false;
-            }
-            if (passing[10*a + b + 11] != 0) {
-                return false;
-            }
-            passing[10*a + b + 1] = 2;
-            passing[10*a + b + 11] = 2;
-        }
+        // alert("Hey4");
         return true;
     }
-    function create_comp_board(){
-        var i;
-        var direction = []
-        direction[0] = "Horizontal";
-        direction[1] = "Vertical";
-        var random_1 = [0, 1, 2, 7, 8, 9]
-        var random_2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
-        for (i = 5; i > 1; i--) {
-            var flag = false
-            while (flag == False){
-                var dir = direction[Math.floor(Math.random() * direction.length)];
-                var rand_1 = random_1[Math.floor(Math.random() * random_1.length)];
-                var rand_2 = random_2[Math.floor(Math.random() * random_2.length)];
-                if (dir == "Horizontal") {
-                    var ok = check_validity_and_place(i, rand, rand_1, rand_2);
-                    if (ok == true){
-                        flag = true;
-                    }
-                    else {
-                        continue;
-                    }
+    if ((ship_id == 5) && (orient == "Vertical")) {
+        // alert("Vac");
+        if (a > 5){
+            // alert("Nope5");
+            return false;
+        }
+        passing[10*a + b + 1] = 5;
+        passing[10*a + b + 11] = 5;
+        passing[10*a + b + 21] = 5;
+        passing[10*a + b + 31] = 5;
+        passing[10*a + b + 41] = 5;
+        // alert("Hey5");
+        return true;
+    }
+    if ((ship_id == 4) && (orient == "Vertical")) {
+        if (a > 6){
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 11] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 21] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 31] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 4;
+        passing[10*a + b + 11] = 4;
+        passing[10*a + b + 21] = 4;
+        passing[10*a + b + 31] = 4;
+        // alert("Hey6");
+        return true;
+    }
+    if ((ship_id == 3) && (orient == "Vertical")) {
+        if (a > 7){
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 11] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 21] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 3;
+        passing[10*a + b + 11] = 3;
+        passing[10*a + b + 21] = 3;
+        // alert("Hey7");
+        return true;
+    }
+    if ((ship_id == 2) && (orient == "Vertical")) {
+        if (a > 8){
+            return false;
+        }
+        if (passing[10*a + b + 1] != 0) {
+            return false;
+        }
+        if (passing[10*a + b + 11] != 0) {
+            return false;
+        }
+        passing[10*a + b + 1] = 2;
+        passing[10*a + b + 11] = 2;
+        // alert("Hey8");
+        return true;
+    }
+}
+function create_comp_board(){
+    var i;
+    var direction = [];
+    direction[0] = "Horizontal";
+    direction[1] = "Vertical";
+    var random_1 = [0, 1, 2, 7, 8, 9];
+    var random_2 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    for (i = 5; i > 1; i--) {
+        var flag = false;
+        while (flag == false){
+            var dir = direction[Math.floor(Math.random() * direction.length)];
+            // alert(direction);
+            // alert(random_1);
+            // alert(random_2);
+            var rand_1 = random_1[Math.floor(Math.random() * random_1.length)];
+            var rand_2 = random_2[Math.floor(Math.random() * random_2.length)];
+            // alert(i);
+            // alert(dir);
+            // alert(rand_1);
+            // alert(rand_2);
+            if (dir == "Horizontal") {
+                var ok = check_validity_and_place(i, dir, rand_1, rand_2);
+                // alert(ok);
+                if (ok == true){
+                    flag = true;
                 }
-                if (dir == "Vertical") {
-                    var ok = check_validity_and_place(i, rand, rand_2, rand_1);
-                    if (ok == true){
-                        flag = true;
-                    }
-                    else {
-                        continue;
-                    }
+            }
+            if (dir == "Vertical") {
+                var ok = check_validity_and_place(i, dir, rand_2, rand_1);
+                // alert(ok);
+                if (ok == true){
+                    flag = true;
                 }
             }
         }
-        alert(passing);
     }
-
-
-
+    // alert(passing);
+}
+function send_board(id1, id2)
+{
+    // alert("GOME");
+    location.href = 'send_comp_board.php?id1=' + id1 + '&id2=' + id2 + '&array=' + passing;
+}
+function comp_hit_cell(id, id1, id2, id3, turn)
+{
+    var place = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100];
+    if(id == 1)
+    {
+        var cell = place[Math.floor(Math.random() * place.length)];
+        location.href = 'check_hit_comp.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=1';
+    }
+    else if(id == 2)
+    {
+        var cell = place[Math.floor(Math.random() * place.length)];
+        location.href = 'check_hit_comp.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+    }
+}
+</script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
 <!-- <div class = "image"></div> -->
@@ -959,6 +1026,7 @@ function check_validity_and_place(ship_id, orient, a, b){
     <?php
         $B1_id = $_GET['id1'];
         $B2_id = $_GET['id2'];
+        $B3_id = $_GET['id3'];
         echo $B1_id, "<br>";
         $mysqli = new mysqli("localhost", "root", "", "Battleship");
         $mysqli->query("USE Battleship");
@@ -1085,8 +1153,10 @@ function check_validity_and_place(ship_id, orient, a, b){
                             $part = explode("_", $row["TABLE_NAME"]);
                             echo $B1_name, "<br>";
                             echo $part[0], "<br>";
-                            if($B1_name != $row["TABLE_NAME"] && $part[0] != "BoardUsing" && $part[0] != "Shots" && $part[0] != "Turns")
+                            if($B1_name != $row["TABLE_NAME"] && $part[0] == "Board")
                                 $B2_name = $row["TABLE_NAME"];
+                            if($part[0] == "BoardComputer")
+                                $C_Name = $row["TABLE_NAME"];
                             echo $B2_name, "<br>";
                             echo "<br>";
                         }
@@ -1096,7 +1166,8 @@ function check_validity_and_place(ship_id, orient, a, b){
         echo "isTouch";
         $isTouch = empty($B2_name);
         echo empty($B2_name);
-        echo $isTouch;
+        echo $isTouch, "<br>";
+        echo $C_Name;
             if(!isset($B2_name))
             {
                 echo "<br><br>                                  WAITING                                          <br><br>";
@@ -1104,15 +1175,27 @@ function check_validity_and_place(ship_id, orient, a, b){
             }
             else
             {
+                if(!isset($C_Name))
+                {
+                    echo "GONE<br>";
+                    echo "<script>
+                            create_comp_board();
+                            send_board(" . $B1_id . ", " . $B2_id . ");
+                    </script>";
+                    echo "HDHDHD<br>";
+                }
                 $parts = explode("_", $B2_name);
                 echo "WENT", "<br>";
-                echo $parts[1];
+                echo $parts[1], "<br>";
+                $p = explode("_", $C_Name);
+                echo $p[1], "<br>";
+                echo $B3_id;
                             echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
                 echo "<script>
                         redirect();
                         function redirect()
                         {
-                            location.href = 'match.php?id1=" . $B1_id . "&id2=" . $parts[1] . "';
+                            location.href = 'match.php?id1=" . $B1_id . "&id2=" . $parts[1] . "&id3=" . $p[1] . "';
                         }
                     </script>";
             }
@@ -1121,7 +1204,7 @@ function check_validity_and_place(ship_id, orient, a, b){
 ?>
 <?
     // again:
-    $Turns = "Turns_" . $B2_id . "_" . $B1_id;
+    $Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Turns = True;
     $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
         if($result->num_rows > 0)
@@ -1137,7 +1220,7 @@ function check_validity_and_place(ship_id, orient, a, b){
             }
         if($check_Turns)
         {
-            $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id);
+            $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
                 if($result->num_rows > 0)
                 {
                     while($row = $result->fetch_assoc())
@@ -1152,7 +1235,7 @@ function check_validity_and_place(ship_id, orient, a, b){
         }
         else
         {
-            $result = $mysqli->query("SELECT * FROM Turns_" . $B2_id . "_" . $B1_id);
+            $result = $mysqli->query("SELECT * FROM Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
                 if($result->num_rows > 0)
                 {
                     while($row = $result->fetch_assoc())
@@ -1173,131 +1256,265 @@ function check_validity_and_place(ship_id, orient, a, b){
             echo "<script>
                     show_turn(2);
         </script>";
+        else if($turn == $B3_id)
+            echo "<script>
+                    show_turn(3);
+                    var rand = [1, 2];
+                    var id = rand[Math.floor(Math.random() * rand.length)];
+                        if(id == 1)
+                            comp_hit_cell(1, " . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $B2_id . ");
+                        else if(id == 2)
+                            comp_hit_cell(2, " . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $B1_id . ");
+        </script>";
 ?>
 <table bgcolor = "586171" class = "pos_fixed_2">
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(1, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(2, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(3, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(4, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(5, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(6, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(7, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(8, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(9, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(10, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(1, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(2, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(3, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(4, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(5, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(6, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(7, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(8, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(9, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(10, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(11, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(12, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(13, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(14, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(15, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(16, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(17, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(18, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(19, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(20, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(11, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(12, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(13, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(14, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(15, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(16, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(17, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(18, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(19, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(20, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(21, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(22, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(23, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(24, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(25, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(26, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(27, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(28, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(29, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(30, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(21, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(22, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(23, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(24, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(25, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(26, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(27, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(28, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(29, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(30, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(31, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(32, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(33, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(34, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(35, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(36, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(37, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(38, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(39, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(40, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(31, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(32, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(33, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(34, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(35, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(36, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(37, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(38, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(39, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(40, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(41, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(42, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(43, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(44, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(45, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(46, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(47, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(48, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(49, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(50, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(41, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(42, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(43, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(44, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(45, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(46, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(47, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(48, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(49, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(50, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(51, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(52, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(53, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(54, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(55, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(56, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(57, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(58, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(59, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(60, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(51, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(52, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(53, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(54, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(55, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(56, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(57, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(58, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(59, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(60, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(61, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(62, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(63, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(64, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(65, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(66, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(67, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(68, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(69, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(70, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(61, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(62, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(63, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(64, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(65, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(66, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(67, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(68, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(69, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(70, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(71, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(72, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(73, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(74, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(75, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(76, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(77, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(78, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(79, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(80, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(71, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(72, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(73, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(74, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(75, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(76, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(77, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(78, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(79, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(80, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(81, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(82, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(83, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(84, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(85, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(86, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(87, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(88, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(89, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(90, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(81, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(82, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(83, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(84, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(85, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(86, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(87, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(88, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(89, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(90, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
     <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(91, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(92, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(93, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(94, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(95, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(96, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(97, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(98, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(99, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(100, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(91, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(92, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(93, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(94, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(95, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(96, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(97, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(98, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(99, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_2(100, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
     </tr>
 </table>
+<center>
+<table bgcolor = "586171" class = "pos_fixed_3">
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(1, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(2, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(3, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(4, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(5, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(6, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(7, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(8, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(9, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(10, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(11, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(12, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(13, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(14, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(15, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(16, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(17, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(18, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(19, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(20, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(21, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(22, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(23, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(24, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(25, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(26, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(27, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(28, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(29, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(30, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(31, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(32, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(33, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(34, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(35, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(36, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(37, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(38, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(39, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(40, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(41, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(42, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(43, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(44, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(45, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(46, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(47, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(48, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(49, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(50, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(51, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(52, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(53, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(54, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(55, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(56, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(57, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(58, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(59, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(60, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(61, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(62, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(63, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(64, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(65, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(66, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(67, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(68, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(69, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(70, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(71, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(72, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(73, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(74, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(75, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(76, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(77, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(78, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(79, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(80, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(81, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(82, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(83, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(84, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(85, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(86, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(87, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(88, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(89, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(90, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+    <tr>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(91, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(92, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(93, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(94, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(95, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(96, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(97, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(98, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(99, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+        <td><input type = "button" class = "table" onclick = "check_hit_3(100, <? echo $B1_id ?>, <? echo $B2_id ?>, <? echo $B3_id ?>, <? echo $turn ?>)"></td>
+    </tr>
+</table>
+</center>
 <?
-    $Shots = "Shots_" . $B2_id . "_" . $B1_id;
+    $Shots = "Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Shots = True;
     $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
         if($result->num_rows > 0)
@@ -1310,9 +1527,9 @@ function check_validity_and_place(ship_id, orient, a, b){
                     }
             }
         if($check_Shots)
-            $result = $mysqli->query("SELECT * FROM Shots_" . $B1_id . "_" . $B2_id);
+            $result = $mysqli->query("SELECT * FROM Shots_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
         else
-            $result = $mysqli->query("SELECT * FROM Shots_" . $B2_id . "_" . $B1_id);
+            $result = $mysqli->query("SELECT * FROM Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
         if($result->num_rows > 0)
             {
                 while($row = $result->fetch_assoc())
@@ -1329,6 +1546,13 @@ function check_validity_and_place(ship_id, orient, a, b){
                         $Hits2[$row['Hits']] = $Hits2[$row['Hits']] + 1;
                         echo "<script>
                                 check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 2);
+                        </script>";
+                    }
+                    else if($row["Board"] == $B3_id)
+                    {
+                        $Hits3[$row['Hits']] = $Hits3[$row['Hits']] + 1;
+                        echo "<script>
+                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 3);
                         </script>";
                     }
                 }
@@ -1351,136 +1575,20 @@ function check_validity_and_place(ship_id, orient, a, b){
                             show_hits_on_side(2, " . $i . ", " . $Hits2[$i] . ");
                     </script>";
             }
+            if($Hits3[$i] != NULL && $i != 1 && $i != 0)
+            {
+                echo $i, "&nbsp&nbsp", $Hits3[$i], "<br>";
+                $Hitted_3 = $Hitted_3 + $Hits3[$i];
+                echo "<script>
+                            show_hits_on_side(3, " . $i . ", " . $Hits3[$i] . ");
+                    </script>";
+            }
         }
-        echo $Hitted_1, "<br>", $Hitted_2;
-        if($Hitted_1 == 14)
-        {
+        echo $Hitted_1, "<br>", $Hitted_2, "<br>", $Hitted_3;
+        // if($Hitted_1 == 14)
+        // {
 
-        }
+        // }
 ?>
-<center>
-<table bgcolor = "586171" class = "pos_fixed_3">
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(1)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(2)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(3)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(4)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(5)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(6)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(7)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(8)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(9)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(10)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(11)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(12)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(13)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(14)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(15)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(16)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(17)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(18)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(19)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(20)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(21)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(22)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(23)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(24)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(25)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(26)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(27)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(28)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(29)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(30)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(31)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(32)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(33)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(34)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(35)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(36)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(37)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(38)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(39)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(40)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(41)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(42)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(43)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(44)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(45)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(46)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(47)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(48)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(49)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(50)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(51)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(52)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(53)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(54)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(55)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(56)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(57)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(58)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(59)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(60)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(61)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(62)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(63)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(64)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(65)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(66)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(67)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(68)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(69)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(70)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(71)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(72)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(73)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(74)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(75)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(76)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(77)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(78)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(79)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(80)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(81)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(82)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(83)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(84)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(85)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(86)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(87)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(88)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(89)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(90)"></td>
-    </tr>
-    <tr>
-        <td><input type = "button" class = "table" onclick = "check_hit(91)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(92)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(93)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(94)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(95)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(96)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(97)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(98)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(99)"></td>
-        <td><input type = "button" class = "table" onclick = "check_hit(100)"></td>
-    </tr>
-</table>
-</center>
 </body>
 </html>

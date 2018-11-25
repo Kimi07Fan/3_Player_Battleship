@@ -6,7 +6,7 @@
 	$B_id = rand();
 	echo $B_id, "<br>";
 	$Board = "Board_" . $B_id;
-	$Board_Using = "Board_Using_" . $B_id;
+	$Board_Using = "BoardUsing_" . $B_id;
 	echo $Board, "<br>";
 	$check = True;
 	$result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
@@ -47,5 +47,5 @@
 			}
 		}
 	echo "WENT";
-	header('Location: play_area.php?id1='. $B_id . '&id2=0');
+	header('Location: play_area.php?id1='. $B_id . '&id2=0&id3=0');
  ?>
