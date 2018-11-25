@@ -108,13 +108,16 @@
         color: red;
     }
     p.demo {
-        
-        
-        
         font-family: "Times New Roman", Times, serif;
         font-style: normal;
         font-size: 50px;
         color: black;
+    }
+    img.waiting {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size = cover;
     }
 </style>
 <script type="text/javascript">
@@ -589,8 +592,7 @@ function show_hits_on_side(player_id, ship_id, no_of_hits){
             }
         }
     }
-    if (player_id == 3
-        ) {
+    if (player_id == 3) {
         if (ship_id == 5) {
             lf = 420;
             for (i = 0; i < no_of_hits; i++) {
@@ -841,6 +843,12 @@ function comp_hit_cell(id, id1, id2, id3, turn)
         var cell = place[Math.floor(Math.random() * place.length)];
         location.href = 'check_hit_comp.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
     }
+}
+function evaluate_board(){
+    
+}
+function the_computer_plays(board_1, board_2) {
+    
 }
 </script>
 </head>
@@ -1171,6 +1179,7 @@ function comp_hit_cell(id, id1, id2, id3, turn)
             if(!isset($B2_name))
             {
                 echo "<br><br>                                  WAITING                                          <br><br>";
+                echo "<img src = \"loading.gif\" class = \"waiting\">";
                 // goto start;
             }
             else
