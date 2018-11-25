@@ -473,6 +473,9 @@ function check_cell(cell_number, h_or_m, player_id){
     hit_or_miss(a, b, h_or_m, player_id);
 }
 function show_turn(id) {
+    if (id == 0) {
+        return;
+    }
     ac_h = document.createElement("IMG");
     ac_h.setAttribute("src", "Turn.png");
     if (id == 1){ // Player 1's Turn
@@ -483,9 +486,6 @@ function show_turn(id) {
     }
     if (id == 3) { // Computer's Turn
         ac_h.setAttribute("style", "top: 605px; left: 800px; position: absolute");
-    }
-    else {
-        var k;
     }
     document.body.appendChild(ac_h);
 }
