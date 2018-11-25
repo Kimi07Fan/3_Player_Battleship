@@ -845,16 +845,468 @@ function comp_hit_cell(id, id1, id2, id3, turn)
     }
 }
 function evaluate_board(board){
-    
+    var i;
+    var ac_hits;
+    var cr_hits;
+    var sb_hits;
+    var ds_hits;
+    var misses;
+    var ac_loc;
+    var cr_loc;
+    var sb_loc;
+    var ds_loc;
+    var ms_loc;
+    ac_loc = [];
+    cr_loc = [];
+    sb_loc = [];
+    ds_loc = [];
+    ms_loc = [];
+    for (i = 1; i < 101; i++) {
+        if (board[i] == 5) {
+            ac_loc[ac_hits] = i;
+            ac_hits = ac_hits + 1;
+        }
+        if (board[i] == 4) {
+            cr_loc[cr_hits] = i;
+            cr_hits = cr_hits + 1;
+        }
+        if (board[i] == 3) {
+            sb_loc[sb_hits] = i;
+            sb_hits = sb_hits + 1;
+        }
+        if (board[i] == 2) {
+            ds_loc[ds_hits] = i;
+            ds_hits = ds_hits + 1;
+        }
+        if (board[i] == 0) {
+            ms_loc[misses] = i;
+            misses = misses + 1;
+        }
+    }
+    var return_list;
+    return_list[0] = ac_hits;
+    return_list[1] = cr_hits;
+    return_list[2] = sb_hits;
+    return_list[3] = ds_hits;
+    return_list[4] = misses;
+    return_list[5] = ac_hits + cr_hits + sb_hits + ds_hits;
+    return_list[6] = ac_loc;
+    return_list[7] = cr_loc;
+    return_list[8] = sb_loc;
+    return_list[9] = ds_loc;
+    return_list[10] = ms_loc;
+    return return_list;
 }
-function the_computer_plays(board_1, board_2) {
-    pl_1_array = evaluate_board(board_1)
+function compute_guesses(cell_number) {
+    var r;
+    r = []
+    a = Math.floor(cell_number / 10);
+    b = cell_number % 10 - 1;
+    if (b == -1) {
+        b = 9;
+        a = a - 1;
+    }
+    if (cell_number == 1) {
+        r[0] = 2;
+        r[1] = 11;
+    }
+    else if (cell_number == 10) {
+        r[0] = 9;
+        r[1] = 20;
+    }
+    else if (cell_number == 91) {
+        r[0] = 81;
+        r[0] = 92;
+    }
+    else if (cell_number == 100) {
+        r[0] = 99;
+        r[0] = 90;
+    }
+    else if (a == 0) {
+        r[0] = cell_number - 1;
+        r[1] = cell_number + 1;
+        r[2] = cell_number + 10;
+    }
+    else if (a == 9) {
+        r[0] = cell_number - 10;
+        r[1] = cell_number - 1;
+        r[2] = cell_number + 1;
+    }
+    else if (b == 0) {
+        r[0] = cell_number - 10;
+        r[1] = cell_number + 1;
+        r[2] = cell_number + 10;
+    }
+    else if (b == 9) {
+        r[0] = cell_number - 10;
+        r[1] = cell_number - 1;
+        r[2] = cell_number + 10;
+    }
+    else {
+        r[0] = cell_number - 10;
+        r[1] = cell_number - 1;
+        r[2] = cell_number + 1;
+        r[3] = cell_number + 10;
+    }
+}
+function the_computer_plays(board_1, board_2, computer_board) {
+    pl_1_array = evaluate_board(board_1);
+    pl_2_array = evaluate_board(board_2);
+    comp_array = evaluate_board(computer_board);
+    who_to_hit = 0;
+    if (comp_array[5] >= 9) {
+        if (pl_1_array[5] > pl_2_array[5]) {
+            who_to_hit = 1;
+        }
+        else {
+            who_to_hit = 2;
+        }
+    }
+    else {
+        if (pl_1_array[5] > pl_2_array[5]) {
+            who_to_hit = 2;
+        }
+        else {
+            who_to_hit = 1;
+        }
+    }
+    // Looking for patterns in the board to be attacked.
+    if (who_to_hit == 1) {
+        ac_hits = pl_1_array[0];
+        cr_hits = pl_1_array[1];
+        sb_hits = pl_1_array[2];
+        ds_hits = pl_1_array[3];
+        misses = pl_1_array[4];
+        ac_loc = pl_1_array[6];
+        cr_loc = pl_1_array[7];
+        sb_loc = pl_1_array[8];
+        ds_loc = pl_1_array[9];
+        ms_loc = pl_1_array[10];
+        // What the hell am I doing with my life?
+        // Anyway, back to the code.
+        if ((ac_hits != 0) || (ac_hits != 5)) {
+            if (ac_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = ac_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = ac_loc[0];
+                current_hit_2 = ac_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[6] = current_hit_1 + 40;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                    possible_hits[7] = current_hit_1 - 40;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[6] = current_hit_1 + 4;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                    possible_hits[7] = current_hit_1 - 4;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((cr_hits != 0) || (cr_hits != 4)) {
+            if (cr_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = cr_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = cr_loc[0];
+                current_hit_2 = cr_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((sb_hits != 0) || (sb_hits != 3)) {
+            if (sb_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = sb_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = sb_loc[0];
+                current_hit_2 = sb_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((ds_hits != 0) || (ds_hits != 2)) {
+            var possible_hits;
+            possible_hits = [];
+            current_hit = ds_loc[0];
+            possible_hits = compute_guesses(current_hit);
+            var j;
+            for (j = 0; j < possible_hits.length; j++) {
+                if (board_1[possible_hits[j]] == -1) {
+                    guess = possible_hits[j];
+                }
+            }
+        }
+        else {
+            var i;
+            var possible_hits;
+            possible_hits = [];
+            for (i = 1; i < 101; i++) {
+                if (board_1[i] == -1) {
+                    possible_hits.push(i);
+                }
+            }
+            var guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
+        }
+    }
+    if (who_to_hit == 2) {
+        ac_hits = pl_2_array[0];
+        cr_hits = pl_2_array[1];
+        sb_hits = pl_2_array[2];
+        ds_hits = pl_2_array[3];
+        misses = pl_2_array[4];
+        ac_loc = pl_2_array[6];
+        cr_loc = pl_2_array[7];
+        sb_loc = pl_2_array[8];
+        ds_loc = pl_2_array[9];
+        ms_loc = pl_2_array[10];
+        // What the hell am I doing with my life?
+        // Anyway, back to the code.
+        if ((ac_hits != 0) || (ac_hits != 5)) {
+            if (ac_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = ac_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = ac_loc[0];
+                current_hit_2 = ac_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[6] = current_hit_1 + 40;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                    possible_hits[7] = current_hit_1 - 40;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[6] = current_hit_1 + 4;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                    possible_hits[7] = current_hit_1 - 4;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((cr_hits != 0) || (cr_hits != 4)) {
+            if (cr_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = cr_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = cr_loc[0];
+                current_hit_2 = cr_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((sb_hits != 0) || (sb_hits != 3)) {
+            if (sb_hits == 1) {
+                var possible_hits;
+                possible_hits = [];
+                current_hit = sb_loc[0];
+                possible_hits = compute_guesses(current_hit);
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+            else {
+                var possible_hits;
+                possible_hits = [];
+                current_hit_1 = sb_loc[0];
+                current_hit_2 = sb_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                }
+                else {
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                }
+                var j;
+                for (j = 0; j < possible_hits.length; j++) {
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
+                    }
+                }
+            }
+        }
+        else if ((ds_hits != 0) || (ds_hits != 2)) {
+            var possible_hits;
+            possible_hits = [];
+            current_hit = ds_loc[0];
+            possible_hits = compute_guesses(current_hit);
+            var j;
+            for (j = 0; j < possible_hits.length; j++) {
+                if (board_2[possible_hits[j]] == -1) {
+                    guess = possible_hits[j];
+                }
+            }
+        }
+        else {
+            var i;
+            var possible_hits;
+            possible_hits = [];
+            for (i = 1; i < 101; i++) {
+                if (board_2[i] == -1) {
+                    possible_hits.push(i);
+                }
+            }
+            var guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
+        }
+    }
+    var return_list;
+    return_list = [];
+    return_list[0] = who_to_hit;
+    return_list[1] = guess;
 }
 </script>
 </head>
 <body> <!-- An image is needed. Will work on that.-->
 <!-- <div class = "image"></div> -->
-<p id="demo" style="text-align: center; font-size: 50px; margin-top: 0px;"></p>
+<p id = "demo" style = "text-align: center; font-size: 50px; margin-top: 0px;"></p>
 <script>
     // Set the date we're counting down to
     // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
