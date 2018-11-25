@@ -1306,6 +1306,7 @@ function the_computer_plays(board_1, board_2, computer_board) {
     return_list = [];
     return_list[0] = who_to_hit;
     return_list[1] = guess;
+    return return_list;
 }
 </script>
 </head>
