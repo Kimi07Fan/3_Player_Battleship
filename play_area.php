@@ -844,11 +844,11 @@ function comp_hit_cell(id, id1, id2, id3, turn)
         location.href = 'check_hit_comp.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
     }
 }
-function evaluate_board(){
+function evaluate_board(board){
     
 }
 function the_computer_plays(board_1, board_2) {
-    
+    pl_1_array = evaluate_board(board_1)
 }
 </script>
 </head>
