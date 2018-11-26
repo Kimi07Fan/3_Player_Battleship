@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+	<title></title>
     <meta http-equiv="refresh" content="5" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -128,9 +128,9 @@ function place(a, b, selected, orient){
     lf = eval(lf);
     tp = 101 + a * 40;
     fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute"
-    // alert(selected);
-    // alert(a);
-    // alert(b);
+    //alert(selected);
+    //alert(a);
+    //alert(b);
     // if (completed.includes(selected) == true) {
     //     return;
     // }
@@ -157,20 +157,20 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ac");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 5;
         // passing[10*a + b + 2] = 5;
         // passing[10*a + b + 3] = 5;
         // passing[10*a + b + 4] = 5;
         // passing[10*a + b + 5] = 5;
-        // alert(passing);
+        //alert(passing);
     }
     if ((selected == "cr") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (b > 6){
         //     return;
         // }
@@ -189,18 +189,18 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Cruiser_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("cr");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 4;
         // passing[10*a + b + 2] = 4;
         // passing[10*a + b + 3] = 4;
         // passing[10*a + b + 4] = 4;
     }
     if ((selected == "sb") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (b > 7){
         //     return;
         // }
@@ -216,17 +216,17 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Submarine_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("sb");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 3;
         // passing[10*a + b + 2] = 3;
         // passing[10*a + b + 3] = 3;
     }
     if ((selected == "ds") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (b > 8){
         //     return;
         // }
@@ -239,11 +239,11 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Destroyer_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ds");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 2;
         // passing[10*a + b + 2] = 2;
     }
@@ -266,24 +266,24 @@ function place(a, b, selected, orient){
         // // if (passing[10*a + b + 41] == 5) {
         //     return;
         // }
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Aircraft_Carrier_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ac");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 5;
         // passing[10*a + b + 11] = 5;
         // passing[10*a + b + 21] = 5;
         // passing[10*a + b + 31] = 5;
         // passing[10*a + b + 41] = 5;
-        // alert(passing);
+        //alert(passing);
     }
     if ((selected == "cr") && (orient == "Vertical")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (a > 6){
         //     return;
         // }
@@ -302,18 +302,18 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Cruiser_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("cr");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 4;
         // passing[10*a + b + 11] = 4;
         // passing[10*a + b + 21] = 4;
         // passing[10*a + b + 31] = 4;
     }
     if ((selected == "sb") && (orient == "Vertical")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (a > 7){
         //     return;
         // }
@@ -329,17 +329,17 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Submarine_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("sb");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 3;
         // passing[10*a + b + 11] = 3;
         // passing[10*a + b + 21] = 3;
     }
     if ((selected == "ds") && (orient == "Vertical")) {
-        // alert("Say cheese?")
+        //alert("Say cheese?")
         // if (a > 8){
         //     return;
         // }
@@ -352,11 +352,11 @@ function place(a, b, selected, orient){
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Destroyer_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
+        //alert("I'm here!");
+        //alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ds");
-        // alert(completed);
+        //alert(completed);
         // passing[10*a + b + 1] = 2;
         // passing[10*a + b + 11] = 2;
     }
@@ -399,7 +399,7 @@ function hit_or_miss(a, b, hit, id) {
     if (id == 1){  // Me
         tp = 101 + a * 40;
         lf = 201 + b * 40;
-        // alert(tp, lf)
+        //alert(tp, lf)
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         if (hit != 0){
             ac_h = document.createElement("IMG");
@@ -490,13 +490,13 @@ function check_hit_2(cell, id1, id2, id3, turn, lost)
 {
     // alert("hit " + lost);
     if(turn == id1 && lost != id2)
-        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2&L=' + lost;
 }
 function check_hit_3(cell, id1, id2, id3, turn, lost)
 {
     // alert("hit " + cell);
     if(turn == id1 && lost != id3)
-        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
+        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3&L=' + lost;
 }
 function show_hits_on_side(player_id, ship_id, no_of_hits){
     if (player_id == 1) {
@@ -846,7 +846,6 @@ function comp_hit_cell(id, id1, id2, id3, turn)
     }
 }
 function evaluate_board(board){
-    // alert(board);
     var i;
     var ac_hits;
     var cr_hits;
@@ -858,20 +857,13 @@ function evaluate_board(board){
     var sb_loc;
     var ds_loc;
     var ms_loc;
-    ac_hits = 0;
-    cr_hits = 0;
-    sb_hits = 0;
-    ds_hits = 0;
-    misses = 0;
     ac_loc = [];
     cr_loc = [];
     sb_loc = [];
     ds_loc = [];
     ms_loc = [];
     for (i = 1; i < 101; i++) {
-        // alert(board[i]);
         if (board[i] == 5) {
-            // alert("Here");
             ac_loc[ac_hits] = i;
             ac_hits = ac_hits + 1;
         }
@@ -893,8 +885,6 @@ function evaluate_board(board){
         }
     }
     var return_list;
-    return_list = [];
-    // alert(ac_hits);
     return_list[0] = ac_hits;
     return_list[1] = cr_hits;
     return_list[2] = sb_hits;
@@ -959,265 +949,95 @@ function compute_guesses(cell_number) {
         r[2] = cell_number + 1;
         r[3] = cell_number + 10;
     }
-    return r;
 }
-function minimum_of_list(list) {
-    var i;
-    var minimum = list[0];
-    for (i = 1; i < list.length; i++) {
-        if (list[i] < minimum) {
-            minimum = list[i];
-        }
-    }
-    return minimum;
-}
-function maximum_of_list(list) {
-    var i;
-    var maximum = list[0];
-    for (i = 1; i < list.length; i++) {
-        if (list[i] > maximum) {
-            maximum = list[i];
-        }
-    }
-    return maximum;
-}
-function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
-    // alert(board_1);
+function the_computer_plays(board_1, board_2, computer_board) {
     pl_1_array = evaluate_board(board_1);
-    // alert("Eh?");
     pl_2_array = evaluate_board(board_2);
     comp_array = evaluate_board(computer_board);
-    // alert("Here Now");
-    // alert(pl_1_array);
-    var who_to_hit = 0;
-    var guess = 0;
-    // alert(pl_1_array[5]);
-    // alert(pl_2_array[5]);
-    // alert(comp_array[5]);
+    who_to_hit = 0;
     if (pl_1_array[5] == 14) {
         who_to_hit = 2;
     }
     else if (pl_2_array[5] == 14) {
         who_to_hit = 1;
     }
-    else if (comp_array[5] >= pl_1_array[5] && comp_array[5] >= pl_2_array[5]) {
-        if (pl_1_array[5] > pl_2_array[5]) {
-            who_to_hit = 1;
-        }
-        else if (pl_1_array[5] < pl_2_array[5]){
-            who_to_hit = 2;
-        }
-        else {
-            var mb = [1, 2];
-            var who_to_hit = mb[Math.floor(Math.random() * mb.length)];
-        }
-    }
-    else if (pl_1_array[0] != 5 && pl_1_array[0] != 0) {
-        who_to_hit = 1;
-    }
-    else if (pl_2_array[0] != 5 && pl_2_array[0] != 0) {
-        who_to_hit = 2;
-    }
-    else if (pl_1_array[1] != 4 && pl_1_array[1] != 0) {
-        who_to_hit = 1;
-    }
-    else if (pl_2_array[1] != 4 && pl_2_array[1] != 0) {
-        who_to_hit = 2;
-    }
-    else if (pl_1_array[2] != 3 && pl_1_array[2] != 0) {
-        who_to_hit = 1;
-    }
-    else if (pl_2_array[2] != 3 && pl_2_array[2] != 0) {
-        who_to_hit = 2;
-    }
-    else if (pl_1_array[3] != 2 && pl_1_array[3] != 0) {
-        who_to_hit = 1;
-    }
-    else if (pl_2_array[3] != 2 && pl_2_array[3] != 0) {
-        who_to_hit = 2;
-    }
     else if (comp_array[5] >= 9) {
         if (pl_1_array[5] > pl_2_array[5]) {
             who_to_hit = 1;
         }
-        else if (pl_1_array[5] < pl_2_array[5]){
-            who_to_hit = 2;
-        }
         else {
-            var mb = [1, 2];
-            var who_to_hit = mb[Math.floor(Math.random() * mb.length)];
+            who_to_hit = 2;
         }
     }
     else {
-        // alert("here");
         if (pl_1_array[5] > pl_2_array[5]) {
             who_to_hit = 2;
         }
-        else if (pl_2_array[5] > pl_1_array[5]){
+        else {
             who_to_hit = 1;
         }
-        else {
-            var mb = [1, 2];
-            var who_to_hit = mb[Math.floor(Math.random() * mb.length)];
-        }
     }
-    // alert(who_to_hit);  
     // Looking for patterns in the board to be attacked.
     if (who_to_hit == 1) {
-        // alert("A1");
-        // alert(pl_1_array[0]);
-        var ac_hits = pl_1_array[0];
-        var cr_hits = pl_1_array[1];
-        var sb_hits = pl_1_array[2];
-        var ds_hits = pl_1_array[3];
-        var misses = pl_1_array[4];
-        var ac_loc = pl_1_array[6];
-        var cr_loc = pl_1_array[7];
-        var sb_loc = pl_1_array[8];
-        var ds_loc = pl_1_array[9];
-        var ms_loc = pl_1_array[10];
+        ac_hits = pl_1_array[0];
+        cr_hits = pl_1_array[1];
+        sb_hits = pl_1_array[2];
+        ds_hits = pl_1_array[3];
+        misses = pl_1_array[4];
+        ac_loc = pl_1_array[6];
+        cr_loc = pl_1_array[7];
+        sb_loc = pl_1_array[8];
+        ds_loc = pl_1_array[9];
+        ms_loc = pl_1_array[10];
         // What the hell am I doing with my life?
         // Anyway, back to the code.
-        // alert("Ok");
-        // alert(ac_hits != 0);
-        // alert(ac_hits != 5);
-        // alert("Ok1");
-        if ((ac_hits != 0) && (ac_hits != 5)) {
-            // alert(ac_hits);
+        if ((ac_hits != 0) || (ac_hits != 5)) {
             if (ac_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
                 current_hit = ac_loc[0];
                 possible_hits = compute_guesses(current_hit);
-                // alert("pos " + possible_hits);
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_1[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
             else {
-                // alert("Ok");
                 var possible_hits;
                 possible_hits = [];
-                var current_hit_1 = ac_loc[0];
-                // current_hit_1 = ac_loc[0];
-                var current_hit_2 = ac_loc[1];
-                // alert(ac_loc);
-                // alert((current_hit_1 - current_hit_2) % 10);
-                // alert();
-                // alert(minimum_of_list(ac_loc));
-                // alert(board_1[minimum_of_list(ac_loc) - 1]);
-                var a = Math.floor((minimum_of_list(ac_loc) - 1) / 10);
-                var b = (minimum_of_list(ac_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    // if(a == 0)
-                    // // {
-                    // //     // if(b == 0)
-                    // //     // {
-                    // //     //     // if (board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                    // //     //     //     possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                    // //     //     //     possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                    // //     //     //     possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                    // //     //     //     possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    // //     //     // }    
-                    // //     // }
-                    // // }
-
-                    if (a != 0 && board_1[minimum_of_list(ac_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(ac_loc) + 10;
-                        possible_hits[1] = minimum_of_list(ac_loc) + 20;
-                        possible_hits[2] = minimum_of_list(ac_loc) + 30;
-                        possible_hits[3] = minimum_of_list(ac_loc) + 40;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                        possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                        possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                        possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    }    
-                    // else if (board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[3] = current_hit_1 + 30;
-                        possible_hits[5] = current_hit_1 + 40;
-                        possible_hits[0] = current_hit_1 - 10;
-                        possible_hits[2] = current_hit_1 - 20;
-                        possible_hits[4] = current_hit_1 - 30;
-                        // possible_hits[7] = current_hit_1 - 40;
-                    }
+                current_hit_1 = ac_loc[0];
+                current_hit_2 = ac_loc[1];
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[6] = current_hit_1 + 40;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                    possible_hits[7] = current_hit_1 - 40;
                 }
                 else {
-                    // alert("M1" + ac_loc);
-                    // alert("bhd " + current_hit_1);
-                    // if (board_1[minimum_of_list(ac_loc) - 10] == -1) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 10] == -1) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                        possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                        possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                        possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                        possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                        possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                        possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[3] = current_hit_1 + 3;
-                        possible_hits[5] = current_hit_1 + 4;
-                        possible_hits[0] = current_hit_1 - 1;
-                        possible_hits[2] = current_hit_1 - 2;
-                        possible_hits[4] = current_hit_1 - 3;
-                        // possible_hits[7] = current_hit_1 - 4;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[6] = current_hit_1 + 4;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                    possible_hits[7] = current_hit_1 - 4;
                 }
-                // alert("position " + possible_hits);
-                // alert("len" + possible_hits.length);
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    // alert(board_1[possible_hits[j]]);
-                    // alert(possible_hits[j])
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_1[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
-                // alert("Got here with guess " + guess)
             }
-        // alert("Ok");
         }
-        else if ((cr_hits != 0) && (cr_hits != 4)) {
+        else if ((cr_hits != 0) || (cr_hits != 4)) {
             if (cr_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
@@ -1227,7 +1047,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_1[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
@@ -1236,81 +1055,31 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 possible_hits = [];
                 current_hit_1 = cr_loc[0];
                 current_hit_2 = cr_loc[1];
-                var a = Math.floor((minimum_of_list(cr_loc) - 1) / 10);
-                var b = (minimum_of_list(cr_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    if (a != 0 && board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                        possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                        possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                        possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                        possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    }    
-                    // else if (board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[3] = current_hit_1 + 30;
-                        possible_hits[0] = current_hit_1 - 10;
-                        possible_hits[2] = current_hit_1 - 20;
-                        // possible_hits[5] = current_hit_1 - 30;
-                    }
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
                 }
                 else {
-                    // if (board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                        possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                        possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                        possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                        possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[3] = current_hit_1 + 3;
-                        possible_hits[0] = current_hit_1 - 1;
-                        possible_hits[2] = current_hit_1 - 2;
-                        // possible_hits[5] = current_hit_1 - 3;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
                 }
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_1[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
             }
         }
-        else if ((sb_hits != 0) && (sb_hits != 3)) {
+        else if ((sb_hits != 0) || (sb_hits != 3)) {
             if (sb_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
@@ -1320,7 +1089,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_1[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
@@ -1329,69 +1097,27 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 possible_hits = [];
                 current_hit_1 = sb_loc[0];
                 current_hit_2 = sb_loc[1];
-                var a = Math.floor((minimum_of_list(sb_loc) - 1) / 10);
-                var b = (minimum_of_list(sb_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    if (a != 0 && board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                        possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                        possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    }    
-                    // else if (board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[0] = current_hit_1 - 10;
-                        // possible_hits[3] = current_hit_1 - 20;
-                    }
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
                 }
                 else {
-                    // if (board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                        possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                        possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[0] = current_hit_1 - 1;
-                        // possible_hits[3] = current_hit_1 - 2;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
                 }
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_1[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_1[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
             }
         }
-        else if ((ds_hits != 0) && (ds_hits != 2)) {
+        else if ((ds_hits != 0) || (ds_hits != 2)) {
             var possible_hits;
             possible_hits = [];
             current_hit = ds_loc[0];
@@ -1400,56 +1126,19 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             for (j = 0; j < possible_hits.length; j++) {
                 if (board_1[possible_hits[j]] == -1) {
                     guess = possible_hits[j];
-                    break;
                 }
             }
         }
         else {
-            // alert ("A2");
             var i;
             var possible_hits;
             possible_hits = [];
-            if (ms_loc.length == 0) {
-                possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];
-            }
-            else {
-                var target_cell;
-                var flag;
-                flag = false;
-                // alert("Okay i'm here");
-                while (flag != true) {
-                    target_cell = ms_loc[Math.floor(Math.random() * ms_loc.length)];
-                    // alert(target_cell);
-                    // alert("Here");
-                    if ((target_cell - 11) >= 1 && (target_cell - 11) <= 100 && target_cell % 10 != 1 && board_1[target_cell - 11] == -1){
-                        possible_hits.push(target_cell - 11);
-                    }
-                    if ((target_cell - 9) >= 1 && (target_cell - 9) <= 100 && target_cell % 10 != 0 && board_1[target_cell - 9] == -1){
-                        possible_hits.push(target_cell - 9);
-                    }
-                    if ((target_cell + 9) >= 1 && (target_cell + 9) <= 100 && target_cell % 10 != 1 && board_1[target_cell + 9] == -1){
-                        possible_hits.push(target_cell + 9);
-                    }
-                    if ((target_cell + 11) >= 1 && (target_cell + 11) <= 100 && target_cell % 10 != 0 && board_1[target_cell + 11] == -1){
-                        possible_hits.push(target_cell + 11);
-                    }
-                    if (possible_hits.length > 0) {
-                        flag = true
-                    }
-                    // alert(possible_hits);
+            for (i = 1; i < 101; i++) {
+                if (board_1[i] == -1) {
+                    possible_hits.push(i);
                 }
             }
-            // for (i = 1; i < 101; i++) {
-            //     if (board_1[i] == -1) {
-            //         possible_hits.push(i);
-            //     }
-            // }
-            // alert(possible_hits);
-            // if (possible_hits == []) {
-            //     possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];                
-            // }
-            // alert(possible_hits);
-            guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
+            var guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
         }
     }
     if (who_to_hit == 2) {
@@ -1465,7 +1154,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         ms_loc = pl_2_array[10];
         // What the hell am I doing with my life?
         // Anyway, back to the code.
-        if ((ac_hits != 0) && (ac_hits != 5)) {
+        if ((ac_hits != 0) || (ac_hits != 5)) {
             if (ac_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
@@ -1475,7 +1164,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_2[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
@@ -1484,93 +1172,35 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 possible_hits = [];
                 current_hit_1 = ac_loc[0];
                 current_hit_2 = ac_loc[1];
-                var a = Math.floor((minimum_of_list(ac_loc) - 1) / 10);
-                var b = (minimum_of_list(ac_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    if (a != 0 && board_1[minimum_of_list(ac_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(ac_loc) + 10;
-                        possible_hits[1] = minimum_of_list(ac_loc) + 20;
-                        possible_hits[2] = minimum_of_list(ac_loc) + 30;
-                        possible_hits[3] = minimum_of_list(ac_loc) + 40;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                        possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                        possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                        possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    }    
-                    // else if (board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[3] = current_hit_1 + 30;
-                        possible_hits[5] = current_hit_1 + 40;
-                        possible_hits[0] = current_hit_1 - 10;
-                        possible_hits[2] = current_hit_1 - 20;
-                        possible_hits[4] = current_hit_1 - 30;
-                        // possible_hits[7] = current_hit_1 - 40;
-                    }
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[6] = current_hit_1 + 40;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
+                    possible_hits[7] = current_hit_1 - 40;
                 }
                 else {
-                    // if (board_1[minimum_of_list(ac_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 30;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 40;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                        possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                        possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                        possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                        possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                        possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                        possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[3] = current_hit_1 + 3;
-                        possible_hits[5] = current_hit_1 + 4;
-                        possible_hits[0] = current_hit_1 - 1;
-                        possible_hits[2] = current_hit_1 - 2;
-                        possible_hits[4] = current_hit_1 - 3;
-                        // possible_hits[7] = current_hit_1 - 4;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[6] = current_hit_1 + 4;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
+                    possible_hits[7] = current_hit_1 - 4;
                 }
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_2[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
             }
         }
-        else if ((cr_hits != 0) && (cr_hits != 4)) {
+        else if ((cr_hits != 0) || (cr_hits != 4)) {
             if (cr_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
@@ -1580,7 +1210,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_2[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
@@ -1589,81 +1218,31 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 possible_hits = [];
                 current_hit_1 = cr_loc[0];
                 current_hit_2 = cr_loc[1];
-                var a = Math.floor((minimum_of_list(cr_loc) - 1) / 10);
-                var b = (minimum_of_list(cr_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    if (a != 0 && board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                        possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                        possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                        possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                        possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    }    
-                    // else if (board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[3] = current_hit_1 + 30;
-                        possible_hits[0] = current_hit_1 - 10;
-                        possible_hits[2] = current_hit_1 - 20;
-                        // possible_hits[5] = current_hit_1 - 30;
-                    }
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[4] = current_hit_1 + 30;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
+                    possible_hits[5] = current_hit_1 - 30;
                 }
                 else {
-                    // if (board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                        possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                        possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                        possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                        possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[3] = current_hit_1 + 3;
-                        possible_hits[0] = current_hit_1 - 1;
-                        possible_hits[2] = current_hit_1 - 2;
-                        // possible_hits[5] = current_hit_1 - 3;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[4] = current_hit_1 + 3;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
+                    possible_hits[5] = current_hit_1 - 3;
                 }
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_2[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
             }
         }
-        else if ((sb_hits != 0) && (sb_hits != 3)) {
+        else if ((sb_hits != 0) || (sb_hits != 3)) {
             if (sb_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
@@ -1673,7 +1252,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_2[possible_hits[j]] == -1) {
                         guess = possible_hits[j];
-                        break;
                     }
                 }
             }
@@ -1682,69 +1260,27 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 possible_hits = [];
                 current_hit_1 = sb_loc[0];
                 current_hit_2 = sb_loc[1];
-                var a = Math.floor((minimum_of_list(sb_loc) - 1) / 10);
-                var b = (minimum_of_list(sb_loc)-1) % 10;
-                if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    if (a != 0 && board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                        possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                        possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    }
-                    else if (a != 9 && board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                        possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                        possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    }    
-                    // else if (board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    // }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 10;
-                        possible_hits[1] = current_hit_1 + 20;
-                        possible_hits[0] = current_hit_1 - 10;
-                        // possible_hits[3] = current_hit_1 - 20;
-                    }
+                if (((current_hit_1 - current_hit_2) % 10) != 0) {
+                    possible_hits[0] = current_hit_1 + 10;
+                    possible_hits[2] = current_hit_1 + 20;
+                    possible_hits[1] = current_hit_1 - 10;
+                    possible_hits[3] = current_hit_1 - 20;
                 }
                 else {
-                    // if (board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    // }    
-                    if (b != 0 && board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                        possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                        possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    }
-                    else if (b != 9 && board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                        possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                        possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    }    
-                    else {                
-                        // possible_hits[0] = current_hit_1 + 1;
-                        possible_hits[1] = current_hit_1 + 2;
-                        possible_hits[0] = current_hit_1 - 1;
-                        // possible_hits[3] = current_hit_1 - 2;
-                    }
+                    possible_hits[0] = current_hit_1 + 1;
+                    possible_hits[2] = current_hit_1 + 2;
+                    possible_hits[1] = current_hit_1 - 1;
+                    possible_hits[3] = current_hit_1 - 2;
                 }
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    if(possible_hits[j] > 0 && possible_hits[j] < 101)
-                    {
-                        if (board_2[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
-                            guess = possible_hits[j];
-                            break;
-                        }
+                    if (board_2[possible_hits[j]] == -1) {
+                        guess = possible_hits[j];
                     }
                 }
             }
         }
-        else if ((ds_hits != 0) && (ds_hits != 2)) {
+        else if ((ds_hits != 0) || (ds_hits != 2)) {
             var possible_hits;
             possible_hits = [];
             current_hit = ds_loc[0];
@@ -1753,7 +1289,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             for (j = 0; j < possible_hits.length; j++) {
                 if (board_2[possible_hits[j]] == -1) {
                     guess = possible_hits[j];
-                    break;
                 }
             }
         }
@@ -1761,56 +1296,19 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             var i;
             var possible_hits;
             possible_hits = [];
-            if (ms_loc.length == 0) {
-                possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];
-            }
-            else {
-                var target_cell;
-                var flag;
-                flag = false;
-                while (flag != true) {
-                    target_cell = ms_loc[Math.floor(Math.random() * ms_loc.length)];
-                    // alert(target_cell);
-                    // alert("Here");
-                    if ((target_cell - 11) >= 1 && (target_cell - 11) <= 100 && target_cell % 10 != 1 && board_2[target_cell - 11] == -1){
-                        possible_hits.push(target_cell - 11);
-                    }
-                    if ((target_cell - 9) >= 1 && (target_cell - 9) <= 100 && target_cell % 10 != 0 && board_2[target_cell - 9] == -1){
-                        possible_hits.push(target_cell - 9);
-                    }
-                    if ((target_cell + 9) >= 1 && (target_cell + 9) <= 100 && target_cell % 10 != 1 && board_2[target_cell + 9] == -1){
-                        possible_hits.push(target_cell + 9);
-                    }
-                    if ((target_cell + 11) >= 1 && (target_cell + 11) <= 100 && target_cell % 10 != 0 && board_2[target_cell + 11] == -1){
-                        possible_hits.push(target_cell + 11);
-                    }
-                    if (possible_hits.length > 0) {
-                        flag = true;
-                    }
-                    // alert(possible_hits);
+            for (i = 1; i < 101; i++) {
+                if (board_2[i] == -1) {
+                    possible_hits.push(i);
                 }
             }
-            // for (i = 1; i < 101; i++) {
-            //     if (board_2[i] == -1) {
-            //         possible_hits.push(i);
-            //     }
-            // }
-            // alert(possible_hits);
-            // if (possible_hits == []) {
-            //     possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];                
-            // }
-            // alert(possible_hits);
-            guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
+            var guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
         }
     }
     var return_list;
     return_list = [];
     return_list[0] = who_to_hit;
     return_list[1] = guess;
-    // alert("who " + who_to_hit);
-    // alert(guess);
-    location.href = 'check_hit_comp.php?cell=' + guess + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=' + who_to_hit;
-    // return return_list;
+    return return_list;
 }
 </script>
 </head>
@@ -2173,12 +1671,11 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
     echo "<br><br><br>MATCHED";
 ?>
 <?
-    // again:
+    again:
     $Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Turns = True;
     $Lost = "Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Lost = True;
-    $L = 0;
     $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
         if($result->num_rows > 0)
             {
@@ -2234,6 +1731,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         else if($turn == $B3_id)
             echo "<script>
                     show_turn(3);
+                    var rand = [1, 2];
+                    var id = rand[Math.floor(Math.random() * rand.length)];
+                        if(id == 1)
+                            comp_hit_cell(1, " . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $B2_id . ");
+                        else if(id == 2)
+                            comp_hit_cell(2, " . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $B1_id . ");
         </script>";
         if($check_Lost)
         {
@@ -2619,20 +2122,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     echo "<br>";
             }
             echo "<br>";
-            $B_1 = implode(", ", $Board_1);
-            $B_2 = implode(", ", $Board_2);
-            $B_3 = implode(", ", $Comp_Board);
-            echo $B_1, "<br>";
-        if($turn == $B3_id)
-            echo "<script type=\"text/javascript\">
-                    the_computer_plays(" . json_encode($Board_1) . ", " . json_encode($Board_2) . ", " . json_encode($Comp_Board) . ", " . $B1_id . ", " . $B2_id . ", " . $B3_id . ");
-                </script>";
         echo "1. ", $Hitted_1, "<br>", "2. ", $Hitted_2, "<br>", "3. ", $Hitted_3, "<br>";
         $Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
         $check_Turns = True;
-        $Lost1 = "Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id;
-        $Lost2 = "Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
-        $check_Lost = True;
         $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
             if($result->num_rows > 0)
             {
@@ -2641,8 +2133,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         echo $row["TABLE_NAME"] . "<br>";
                         if($Turns == $row["TABLE_NAME"])
                             $check_Turns = False;
-                        if($Lost1 == $row["TABLE_NAME"] || $Lost2 == $row["TABLE_NAME"])
-                            $check_Lost = False;
                     }
             }
     if($check_Turns)
@@ -2658,12 +2148,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if($row['Turn'] == $B1_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B2_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_2 == 14)
                     {
@@ -2671,7 +2163,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_3 == 14)
@@ -2680,25 +2172,24 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }
                 else if($Hitted_2 == 14)
                 {
                     $L = $B2_id;
-                                        echo "GONE";
-                    echo $B3_id, "<br>", $L, "<br>";
-                    echo $check_Lost;
                     if($row['Turn'] == $B2_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B3_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_1 == 14)
                     {
@@ -2706,7 +2197,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_3 == 14)
@@ -2715,7 +2206,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }
@@ -2725,12 +2216,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if($row['Turn'] == $B3_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B1_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_2 == 14)
                     {
@@ -2738,7 +2231,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_1 == 14)
@@ -2747,7 +2240,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }
@@ -2767,12 +2260,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if($row['Turn'] == $B1_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B3_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_2 == 14)
                     {
@@ -2780,7 +2275,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_3 == 14)
@@ -2789,7 +2284,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }
@@ -2799,12 +2294,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if($row['Turn'] == $B2_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B1_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_1 == 14)
                     {
@@ -2812,7 +2309,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_3 == 14)
@@ -2821,7 +2318,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }
@@ -2831,12 +2328,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if($row['Turn'] == $B3_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B2_id . "'");
-                        if($check_Lost)
-                            $mysqli->query("CREATE TABLE Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost int NOT NULL)");
-                        $result = $mysqli->query("SELECT * FROM Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
-                        if($result->num_rows == 0)
-                            $mysqli->query("INSERT INTO Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Lost) VALUES ('" . $L . "')");
-                        echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                        echo "<script type=\"text/javascript\">
+                                lost_call(" . $B1_id . ", " . $B2_id . ", " . $B3_id . ", " . $L . ");
+                                function lost_call(id1, id2, id3, lost)
+                                {
+                                    location.href = 'Lost_Game.php?id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&L=' + lost;
+                                }
+                            </script>";
+                        goto again;
                     }
                     if($Hitted_2 == 14)
                     {
@@ -2844,7 +2343,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                     else if($Hitted_1 == 14)
@@ -2853,7 +2352,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
-                            echo "<meta http-equiv=\"refresh\" content=\"0\">";
+                            goto again;
                         }
                     }
                 }

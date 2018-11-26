@@ -22,6 +22,7 @@
 			}
 	$Shots = "Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
 	$Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
+	$turn = 0;
 	$check_Shots = True;
 	$check_Turns = True;
 	$result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
@@ -38,6 +39,32 @@
 							$check_Turns = False;
 					}
 			}
+	if($check_Turns)
+	{
+        $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
+            if($result->num_rows > 0)
+            {
+                while($row = $result->fetch_assoc())
+                {
+                	$turn = $row['Turn'];
+                	if($row['Turn'] == $B3_id)
+						$mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B1_id . "'");
+				}
+			}
+	}
+	else
+	{
+        $result = $mysqli->query("SELECT * FROM Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
+        	if($result->num_rows > 0)
+            {
+                while($row = $result->fetch_assoc())
+                {
+                	$turn = $row['Turn'];
+                	if($row['Turn'] == $B3_id)
+						$mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B2_id . "'");
+				}
+			}
+	}
 	if($check_Shots)
 	{
 		$result = $mysqli->query("SELECT Board, Cell FROM Shots_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
@@ -58,9 +85,9 @@
 					}
 				}
 			}
-			if($B == 1)
+			if($B == 1 && $turn == $B3_id)
 				$mysqli->query("INSERT INTO Shots_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Board , Cell, Hits) VALUES ('" . $B1_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
-			if($B == 2)
+			if($B == 2 && $turn == $B3_id)
 				$mysqli->query("INSERT INTO Shots_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " (Board , Cell, Hits) VALUES ('" . $B2_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
 	}
 	else
@@ -83,42 +110,10 @@
 					}
 				}
 			}
-			if($B == 1)
+			if($B == 1 && $turn == $B3_id)
 				$mysqli->query("INSERT INTO Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Board , Cell, Hits) VALUES ('" . $B1_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
-			if($B == 2)
+			if($B == 2 && $turn == $B3_id)
 				$mysqli->query("INSERT INTO Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " (Board , Cell, Hits) VALUES ('" . $B2_id . "' , '" . $cell . "' , '" . $h_or_m . "')");
-	}
-	if($check_Turns)
-	{
-        $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
-            if($result->num_rows > 0)
-            {
-                while($row = $result->fetch_assoc())
-                {
-                	if($row['Turn'] == $B1_id)
-						$mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B2_id . "'");
-                	else if($row['Turn'] == $B2_id)
-						$mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B3_id . "'");
-                	else if($row['Turn'] == $B3_id)
-						$mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B1_id . "'");
-				}
-			}
-	}
-	else
-	{
-        $result = $mysqli->query("SELECT * FROM Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
-        	if($result->num_rows > 0)
-            {
-                while($row = $result->fetch_assoc())
-                {
-                	if($row['Turn'] == $B2_id)
-						$mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B1_id . "'");
-                	else if($row['Turn'] == $B1_id)
-						$mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B3_id . "'");
-                	else if($row['Turn'] == $B3_id)
-						$mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='" . $B2_id . "'");
-				}
-			}
 	}
 	last:
 	header('Location: play_area.php?id1='. $B1_id . '&id2=' . $B2_id . '&id3=' . $B3_id);
