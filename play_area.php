@@ -9,12 +9,12 @@
         margin:0;
     }
     .image {
-        position:fixed;
-        width:100%;
-        height:100%;
-        background:green;
-        background-image:url('Homepage.png');
-        background-size:cover;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: black;
+        background-image: url('Homepage.png');
+        background-size: cover;
     }
     table, th, td {
         border: 2px solid black;
@@ -108,13 +108,18 @@
         color: red;
     }
     p.demo {
-        
-        
-        
-        font-family: "Times New Roman", Times, serif;
-        font-style: normal;
-        font-size: 50px;
-        color: black;
+        position: absolute;
+        top: 25px;
+        right: 20px;
+        font-size: 20px;
+        color: white;
+    }
+    p.above_demo {
+        position: absolute;
+        top: 5px;
+        right: 20px;
+        font-size: 20px;
+        color: white;
     }
     img.loading {
         position: fixed;
@@ -126,6 +131,48 @@
         size: cover;
         height: 100%;
         width: 100%;
+    }
+    img.GameOverP1 {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        height: 400px;
+        width: 400px;
+    }
+    img.GameOverP2 {
+        position: absolute;
+        top: 100px;
+        left: 850px;
+        height: 400px;
+        width: 400px;
+    }
+    img.GameOverP3 {
+        position: absolute;
+        top: 650px;
+        left: 520px;
+        height: 400px;
+        width: 400px;
+    }
+    img.WinnerP1 {
+        position: absolute;
+        top: 100px;
+        left: 200px;
+        height: 400px;
+        width: 400px;
+    }
+    img.WinnerP2 {
+        position: absolute;
+        top: 100px;
+        left: 850px;
+        height: 400px;
+        width: 400px;
+    }
+    img.WinnerP3 {
+        position: absolute;
+        top: 650px;
+        left: 520px;
+        height: 400px;
+        width: 400px;
     }
 </style>
 <script type="text/javascript">
@@ -400,7 +447,7 @@ function put_my_ships(ship_id, orient, cell_number){
     }
     place(a, b, ship, orient);
 }
-function hit_or_miss(a, b, hit, id) {
+function hit_or_miss(a, b, hit, id, last_hit) {
     /* See if you do need the thing for the player who is playing. You may need it */
     // alert(a);
     // alert(b);
@@ -413,9 +460,13 @@ function hit_or_miss(a, b, hit, id) {
         // alert(tp, lf)
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         if (hit != 0){
+            // another = document.createElement("IMG");
+            // another.setAttribute("src", "Blow.gif");
+            // another.setAttribute("style", fnl);
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
+            // document.body.appendChild(another);
             document.body.appendChild(ac_h);
         }
         else {
@@ -438,6 +489,15 @@ function hit_or_miss(a, b, hit, id) {
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;";
         // alert (fnl);
         if (hit != 0){
+            // alert(id);
+            // alert(board);
+            // alert(10 * a + b + 1)
+            if (last_hit == 10 * a + b + 1) {
+                another = document.createElement("IMG");
+                another.setAttribute("src", "Blow.gif");
+                another.setAttribute("style", fnl);
+                document.body.appendChild(another);
+            }   
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
@@ -471,14 +531,15 @@ function hit_or_miss(a, b, hit, id) {
         }
     }
 }
-function check_cell(cell_number, h_or_m, player_id){
+function check_cell(cell_number, h_or_m, player_id, last_hit){
+    // alert(board);
     a = Math.floor(cell_number / 10);
     b = cell_number % 10 - 1;
     if (b == -1) {
         b = 9;
         a = a - 1;
     }
-    hit_or_miss(a, b, h_or_m, player_id);
+    hit_or_miss(a, b, h_or_m, player_id, last_hit);
 }
 function show_turn(id) {
     if (id == 0) {
@@ -497,16 +558,73 @@ function show_turn(id) {
     }
     document.body.appendChild(ac_h);
 }
+function ch2_delay(cell, id1, id2, id3, turn, lost) {
+    // delay(1000);
+    location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+}
+function ch3_delay(cell, id1, id2, id3, turn, lost) {
+    // delay(1000);
+    location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
+}
 function check_hit_2(cell, id1, id2, id3, turn, lost){
     // alert("hit " + lost);
-    if(turn == id1 && lost != id2)
-        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+    // alert(cell);
+    if(turn == id1 && lost != id2) {
+        a = Math.floor(cell / 10);
+        b = cell % 10 - 1;
+        if (b == -1) {
+            b = 9;
+            a = a - 1;
+        }    
+        var fnl = '';
+        // alert(a);
+        // alert(b);
+        tp = 65 + a * 40;
+        // alert(tp);
+        lf = 848 + b * 40;
+        // alert(lf);
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;" + "width: 100px; height: 100px;";
+        ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "blow.gif");
+        ac_h.setAttribute("style", fnl);
+        document.body.appendChild(ac_h);
+        // alert("Here");
+        // window.setTimeout(ch2_delay, 5000);
+        // delay(20000);
+        setTimeout(ch2_delay, 750, cell, id1, id2, id3, turn, lost);
+        // alert("also here");
+        // location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
+        // setTimeout("ch2_delay(cell, id1, id2, id3, turn, lost)", 1);
+    }
 }
 function check_hit_3(cell, id1, id2, id3, turn, lost){
     // alert("hit " + cell);
-    if(turn == id1 && lost != id3)
-        location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
-}
+    if(turn == id1 && lost != id3){
+        a = Math.floor(cell / 10);
+        b = cell % 10 - 1;
+        if (b == -1) {
+            b = 9;
+            a = a - 1;
+        }    
+        var fnl = '';
+        // alert(a);
+        // alert(b);
+        tp = 65 + a * 40;
+        // alert(tp);
+        lf = 848 + b * 40;
+        // alert(lf);
+        fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;" + "width: 100px; height: 100px;";
+        ac_h = document.createElement("IMG");
+        ac_h.setAttribute("src", "blow.gif");
+        ac_h.setAttribute("style", fnl);
+        document.body.appendChild(ac_h);
+        // alert("Here");
+        // window.setTimeout(ch2_delay, 5000);
+        // delay(20000);
+        setTimeout(ch3_delay, 750, cell, id1, id2, id3, turn, lost);
+
+    }
+ 
 function show_hits_on_side(player_id, ship_id, no_of_hits){
     if (player_id == 1) {
         if (ship_id == 5) {
@@ -1821,9 +1939,10 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
 }
 </script>
 </head>
-<body> <!-- An image is needed. Will work on that.-->
+<body bgcolor = "black"> <!-- An image is needed. Will work on that.-->
 <!-- <div class = "image"></div> -->
-<p id="Timer" style="text-align: center; font-size: 50px; margin-top: 0px;"></p>
+<p id="something" class="above_demo">Refresh in:</p>
+<p id="Timer" class = "demo"></p>
 <script>
     // Set the date we're counting down to
     // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
@@ -2554,7 +2673,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         $Board_1[$row['Cell']] = $row['Hits'];
                         $Hits1[$row['Hits']] = $Hits1[$row['Hits']] + 1;
                         echo "<script>
-                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 1);
+                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 1, " . json_encode($Board_1) . ");
                         </script>";
                     }
                     else if($row["Board"] == $B2_id)
@@ -2562,7 +2681,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         $Board_2[$row['Cell']] = $row['Hits'];
                         $Hits2[$row['Hits']] = $Hits2[$row['Hits']] + 1;
                         echo "<script>
-                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 2);
+                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 2, " . json_encode($Board_2) . ");
                         </script>";
                     }
                     else if($row["Board"] == $B3_id)
@@ -2570,7 +2689,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         $Comp_Board[$row['Cell']] = $row['Hits'];
                         $Hits3[$row['Hits']] = $Hits3[$row['Hits']] + 1;
                         echo "<script>
-                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 3);
+                                check_cell(" . $row['Cell'] . ", " . $row['Hits'] . ", 3, " . json_encode($Board_3) . ");
                         </script>";
                     }
                 }
@@ -2662,6 +2781,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             {
                 if($Hitted_1 == 14)
                 {
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                     $L = $B1_id;
                     if($row['Turn'] == $B1_id)
                     {
@@ -2675,6 +2795,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_2 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2684,6 +2806,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_3 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2695,7 +2819,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 else if($Hitted_2 == 14)
                 {
                     $L = $B2_id;
-                                        echo "GONE";
+                    echo "GONE";
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
+
                     echo $B3_id, "<br>", $L, "<br>";
                     echo $check_Lost;
                     if($row['Turn'] == $B2_id)
@@ -2710,6 +2836,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_1 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2719,6 +2847,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_3 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2729,6 +2859,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 }
                 else if($Hitted_3 == 14)
                 {
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                     $L = $B3_id;
                     if($row['Turn'] == $B3_id)
                     {
@@ -2742,6 +2873,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_2 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2751,6 +2884,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_1 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2771,6 +2906,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             {
                 if($Hitted_1 == 14)
                 {
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                     $L = $B1_id;
                     if($row['Turn'] == $B1_id)
                     {
@@ -2784,6 +2920,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_2 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";                        
+                        echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2793,6 +2931,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_3 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP2'>'";
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2803,6 +2943,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 }
                 else if($Hitted_2 == 14)
                 {
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                     $L = $B2_id;
                     if($row['Turn'] == $B2_id)
                     {
@@ -2816,6 +2957,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_1 == 14)
                     {
+                        echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2825,6 +2968,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_3 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP1'>'";
+                        echo "Here";
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2835,6 +2981,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 }
                 else if($Hitted_3 == 14)
                 {
+                    echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                     $L = $B3_id;
                     if($row['Turn'] == $B3_id)
                     {
@@ -2848,6 +2995,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     if($Hitted_2 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2857,6 +3006,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($Hitted_1 == 14)
                     {
+                        echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
+                        echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
