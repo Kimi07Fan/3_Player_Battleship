@@ -174,6 +174,13 @@
         height: 400px;
         width: 400px;
     }
+    form.center {
+        position: absolute;
+        top: 500px;
+        right: 290px;
+        height: 100px;
+        width: 200px;
+    }
 </style>
 <script type="text/javascript">
 function place(a, b, selected, orient){
@@ -609,9 +616,9 @@ function check_hit_3(cell, id1, id2, id3, turn, lost){
         var fnl = '';
         // alert(a);
         // alert(b);
-        tp = 65 + a * 40;
+        tp = 615 + a * 40;
         // alert(tp);
-        lf = 848 + b * 40;
+        lf = 518 + b * 40;
         // alert(lf);
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;" + "width: 100px; height: 100px;";
         ac_h = document.createElement("IMG");
@@ -624,7 +631,7 @@ function check_hit_3(cell, id1, id2, id3, turn, lost){
         setTimeout(ch3_delay, 750, cell, id1, id2, id3, turn, lost);
 
     }
- 
+}
 function show_hits_on_side(player_id, ship_id, no_of_hits){
     if (player_id == 1) {
         if (ship_id == 5) {
@@ -1940,7 +1947,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
 </script>
 </head>
 <body bgcolor = "black"> <!-- An image is needed. Will work on that.-->
-<!-- <div class = "image"></div> -->
+<div class = "image"></div>
 <p id="something" class="above_demo">Refresh in:</p>
 <p id="Timer" class = "demo"></p>
 <script>
@@ -2797,6 +2804,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2808,6 +2818,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2838,7 +2851,10 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
-                        if($row['Turn'] == $B1_id)
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
+                          if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
     //          Need to make changes here              //             Turn as 0
@@ -2849,6 +2865,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2875,6 +2894,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2886,6 +2908,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
@@ -2922,6 +2947,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";                        
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2933,6 +2961,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>'";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2959,6 +2990,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2970,7 +3004,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>'";
-                        echo "Here";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -2997,6 +3033,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
@@ -3008,6 +3047,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
+                        echo '<form method = "get" action = "index.php" class = "center">';
+                        echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
+                        echo '</form>';
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
