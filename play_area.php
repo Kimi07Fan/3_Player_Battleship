@@ -499,12 +499,12 @@ function hit_or_miss(a, b, hit, id, last_hit) {
             // alert(id);
             // alert(board);
             // alert(10 * a + b + 1)
-            if (last_hit == 10 * a + b + 1) {
-                another = document.createElement("IMG");
-                another.setAttribute("src", "Blow.gif");
-                another.setAttribute("style", fnl);
-                document.body.appendChild(another);
-            }   
+            // if (last_hit == 10 * a + b + 1) {
+            //     another = document.createElement("IMG");
+            //     another.setAttribute("src", "Blow.gif");
+            //     another.setAttribute("style", fnl);
+            //     document.body.appendChild(another);
+            // }   
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
