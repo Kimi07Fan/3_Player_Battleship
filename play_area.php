@@ -1620,12 +1620,19 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
     </tr>
 </table>
     <?php
+        /*
+            This php script creates a link between the player and the server getting informations from the server and displaying it on the Screen
+        */
+        // $B1_id takes the player 1's Unique Board id
         $B1_id = $_GET['id1'];
+        // $B2_id takes the player 2's Unique Board id
         $B2_id = $_GET['id2'];
+        // $B3_id takes the Computer's Unique Board id
         $B3_id = $_GET['id3'];
-        echo $B1_id, "<br>";
+        // Connection to the Server and Database 'Battleship'
         $mysqli = new mysqli("localhost", "root", "", "Battleship");
         $mysqli->query("USE Battleship");
+            // checks if player 2 is connected or not and extracts the positions of the ships of player 1
             if($B2_id == 0)
                 $result = $mysqli->query("SELECT * FROM Board_" . $B1_id);
             else
@@ -1633,21 +1640,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             if($result->num_rows > 0)
                     while($row = $result->fetch_assoc())
                         $Board[$row["Positions"]] = $row["Ship"];
-            for ($i=1; $i <= 100 ; $i++) { 
-                echo $Board[$i], " ";
-                if($i%10 == 0)
-                    echo "<br>";
-            }
-                    echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
-                    echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
+            // $Board[] is the Array containing the positions of the ships of player 1
         for ($i=1; $i <= 10; $i++)
         {
                 for ($j=10*($i-1)+1; $j <= 10*$i; $j++)
                 {
-                    echo $j, " ", $Board[$j];
                     if($Board[$j] != 0)
                     {
-                        echo $Board[$j], " " ,$Board[$j+1], " " ,$Board[$j+4];
+                        // check if there is a ship in $j position then whether is it horizontal or vertical and accordingly send the postions of the ship, size of it and orientation to a javascript function put_my_ships() which places the ships on the player 1's board to be shown during the game so that player 1 knows where he had kept his ships
                         if($Board[$j] == 5 && $Board[$j+1] == 5 && $Board[$j+4] == 5)
                             echo "hahah<script>
                                     load1();
@@ -1735,59 +1735,44 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
 <?
     $B1_name = "Board_" . $B1_id;
     $B1_name_Using = "BoardUsing_" . $B1_id;
-    echo $B1_name, "<br>";
-    echo "B2 ", $B2_id, "<br><br>";
     if($B2_id == 0)
     {
+        // if player 2 is not connected then it searches for it until it gets connected
         start:
         $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
             if($result->num_rows > 0)
                 {
                     while($row = $result->fetch_assoc())
                         {
-                            echo $row["TABLE_NAME"] . "<br>";
+                            // checks for none playing board which are waiting to connect to other players, except its own board, inlcuding a none playing Computer board
                             $part = explode("_", $row["TABLE_NAME"]);
-                            echo $B1_name, "<br>";
-                            echo $part[0], "<br>";
                             if($B1_name != $row["TABLE_NAME"] && $part[0] == "Board")
                                 $B2_name = $row["TABLE_NAME"];
                             if($part[0] == "BoardComputer")
                                 $C_Name = $row["TABLE_NAME"];
-                            echo $B2_name, "<br>";
-                            echo "<br>";
                         }
                 }
         mysqli_free_result($result);
-        echo $B2_name, "<br>";
-        echo "isTouch";
         $isTouch = empty($B2_name);
-        echo empty($B2_name);
-        echo $isTouch, "<br>";
-        echo $C_Name;
             if(!isset($B2_name))
             {
-                echo "<br><br>                                  WAITING                                          <br><br>";
+                // until player 2 is connected, i.e. $B2_name is defined, a GIF showing 'Loading' will be appearing telling that the player is waiting for other players to connect
                 echo "<img src = 'loading.gif' class = 'loading'>";
-                // goto start;
             }
             else
             {
                 if(!isset($C_Name))
                 {
-                    echo "GONE<br>";
+                    // once player 2 is connected, this script creates a Board for the Computer using a javascript function create_comp_board() which creates a Board for the Computer according to the algorithm described for the JS function then sends the Board to the server by redirecting using JS function send_board() with arguments, Board id of player 1 and player 2
                     echo "<script>
                             create_comp_board();
                             send_board(" . $B1_id . ", " . $B2_id . ");
                     </script>";
                     echo "HDHDHD<br>";
                 }
+                // once Computer board is set, the two players and the computer are connected using match.php
                 $parts = explode("_", $B2_name);
-                echo "WENT", "<br>";
-                echo $parts[1], "<br>";
                 $p = explode("_", $C_Name);
-                echo $p[1], "<br>";
-                echo $B3_id;
-                            echo "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>";
                 echo "<script>
                         redirect();
                         function redirect()
@@ -1797,10 +1782,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     </script>";
             }
     }
-    echo "<br><br><br>MATCHED";
 ?>
 <?
-    // again:
     $Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Turns = True;
     $Lost = "Lost_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
@@ -1809,17 +1792,16 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
     $result = $mysqli->query("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = \"BASE TABLE\" AND TABLE_SCHEMA=\"Battleship\"");
         if($result->num_rows > 0)
             {
-                $x=0;
-                    while($row = $result->fetch_assoc())
+                while($row = $result->fetch_assoc())
                     {
-                        // $x=$x+$row["num"];
-                        echo $row["TABLE_NAME"] . "<br>";
+                        // checks for the presence of the Lost Table and the Turns Table
                         if($Turns == $row["TABLE_NAME"])
                             $check_Turns = False;
                         if($Lost == $row["TABLE_NAME"])
                             $check_Lost = False;
                     }
             }
+        // checks which arrangement of Turns Table is present in the Database
         if($check_Turns)
         {
             $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
@@ -1827,11 +1809,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 {
                     while($row = $result->fetch_assoc())
                     {
-                        echo "TURN&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp", $row['Turn'], "<br>";
+                        // $turn takes the ongoing turn of the players from the Turns Table
                         $turn = $row['Turn'];
-                        echo "TURN&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp", $turn, "<br>";
-                        // if($row['Turn'] != $B1_id)
-                            // goto again;
                     }
                 }
         }
@@ -1842,14 +1821,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 {
                     while($row = $result->fetch_assoc())
                     {
-                        echo "TURN&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp", $row['Turn'], "<br>";
+                        // $turn takes the ongoing turn of the players from the Turns Table
                         $turn = $row['Turn'];
-                        echo "TURN&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp", $turn, "<br>";
-                        // if($row['Turn'] != $B1_id)
-                            // goto again;
                     }
                 }            
         }
+        // according to $turn, a turn image is shown beside the Player Board according to JS function show_turn() which is defined above
         if($turn == $B1_id)
             echo "<script>
                     show_turn(1);
@@ -1862,6 +1839,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             echo "<script>
                     show_turn(3);
         </script>";
+        // checks which arrangement of Lost Table is present in the Database
         if($check_Lost)
         {
             $result = $mysqli->query("SELECT * FROM Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
@@ -1869,6 +1847,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 {
                     while($row = $result->fetch_assoc())
                     {
+                        // check which player has lost First and stores it in $L
                         if($row['Lost'] == $B1_id)
                             $L = $B1_id;
                         else if($row['Lost'] == $B2_id)
@@ -1885,6 +1864,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 {
                     while($row = $result->fetch_assoc())
                     {
+                        // check which player has lost First and stores it in $L
                         if($row['Lost'] == $B2_id)
                             $L = $B1_id;
                         else if($row['Lost'] == $B1_id)
@@ -2144,6 +2124,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
 <?
     $Shots = "Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
     $check_Shots = True;
+    // $Board_1, $Board_2, $Comp_Board are the Board before any moves were played and evetually will get updated after every move is played
     $Board_1 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
     $Board_2 = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
     $Comp_Board = [-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1];
@@ -2152,15 +2133,17 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             {
                 while($row = $result->fetch_assoc())
                     {
-                        echo $row["TABLE_NAME"] . "<br>";
+                        // checks for the presence of the Shots Table
                         if($Shots == $row["TABLE_NAME"])
                             $check_Shots = False;
                     }
             }
+        // checks which arrangement of Shots Table is present in the Database
         if($check_Shots)
             $result = $mysqli->query("SELECT * FROM Shots_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
         else
             $result = $mysqli->query("SELECT * FROM Shots_" . $B2_id . "_" . $B1_id . "_" . $B3_id);
+        // $Hits1, $Hits2, $Hits3 stores the number of hits for each ship
         $Hits1 = [0, -1, 0, 0, 0, 0];
         $Hits2 = [0, -1, 0, 0, 0, 0];
         $Hits3 = [0, -1, 0, 0, 0, 0];
@@ -2170,6 +2153,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 {
                     if($row["Board"] == $B1_id)
                     {
+                        // the move is stored in $Board_1 and Hits per ship is updated in $Hits1 and the cell and hit is sent to a JS unction check_cell() which will update the Board on the screen with some cool images of ship hit or missed in a move
                         $Board_1[$row['Cell']] = $row['Hits'];
                         $Hits1[$row['Hits']] = $Hits1[$row['Hits']] + 1;
                         echo "<script>
@@ -2178,6 +2162,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($row["Board"] == $B2_id)
                     {
+                        // the move is stored in $Board_2 and Hits per ship is updated in $Hits2 and the cell and hit is sent to a JS unction check_cell() which will update the Board on the screen with some cool images of ship hit or missed in a move
                         $Board_2[$row['Cell']] = $row['Hits'];
                         $Hits2[$row['Hits']] = $Hits2[$row['Hits']] + 1;
                         echo "<script>
@@ -2186,6 +2171,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                     else if($row["Board"] == $B3_id)
                     {
+                        // the move is stored in $Board_3 and Hits per ship is updated in $Hits3 and the cell and hit is sent to a JS unction check_cell() which will update the Board on the screen with some cool images of ship hit or missed in a move
                         $Comp_Board[$row['Cell']] = $row['Hits'];
                         $Hits3[$row['Hits']] = $Hits3[$row['Hits']] + 1;
                         echo "<script>
@@ -2194,14 +2180,16 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     }
                 }
             }
+        // $Hitted_1, $Hitted_2, $Hitted_3 keeps record of how many hits a player or a board have had yet
         $Hitted_1 = 0;
         $Hitted_2 = 0;
         $Hitted_3 = 0;
+        // This updates the Hit experienced variable, i.e. $Hitted_1, $Hitted_2, $Hitted_3, every time a new move is played
+        // JS Function show_hits_on_side() is called when the variables are updated
         for($i = 0; $i <= 5; $i++)
         {
             if($Hits1[$i] != NULL && $i != 1 && $i != 0)
             {
-                echo "1. ", $i, "&nbsp&nbsp", $Hits1[$i], "<br>";
                 $Hitted_1 = $Hitted_1 + $Hits1[$i];
                 echo "<script>
                             show_hits_on_side(1, " . $i . ", " . $Hits1[$i] . ");
@@ -2209,7 +2197,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             }
             if($Hits2[$i] != NULL && $i != 1 && $i != 0)
             {
-                echo "2. ", $i, "&nbsp&nbsp", $Hits2[$i], "<br>";
                 $Hitted_2 = $Hitted_2 + $Hits2[$i];
                 echo "<script>
                             show_hits_on_side(2, " . $i . ", " . $Hits2[$i] . ");
@@ -2217,44 +2204,20 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             }
             if($Hits3[$i] != NULL && $i != 1 && $i != 0)
             {
-                echo "3. ", $i, "&nbsp&nbsp", $Hits3[$i], "<br>";
                 $Hitted_3 = $Hitted_3 + $Hits3[$i];
                 echo "<script>
                             show_hits_on_side(3, " . $i . ", " . $Hits3[$i] . ");
                     </script>";
             }
         }
-        echo "<br><br><br><br><br><br><br><br><br><br>";
-                echo $Board_1[0], "<br>";
-        for ($i=1; $i <= 100 ; $i++) { 
-                echo $Board_1[$i], " ";
-                if($i%10 == 0)
-                    echo "<br>";
-            }
-            echo "<br>";
-                echo $Board_2[0], "<br>";
-        for ($i=1; $i <= 100 ; $i++) { 
-                echo $Board_2[$i], " ";
-                if($i%10 == 0)
-                    echo "<br>";
-            }
-            echo "<br>";
-                echo $Comp_Board[0], "<br>";
-        for ($i=1; $i <= 100 ; $i++) { 
-                echo $Comp_Board[$i], " ";
-                if($i%10 == 0)
-                    echo "<br>";
-            }
-            echo "<br>";
             $B_1 = implode(", ", $Board_1);
             $B_2 = implode(", ", $Board_2);
             $B_3 = implode(", ", $Comp_Board);
-            echo $B_1, "<br>";
+        // when the turn goes to Computer id, he computer plays, i.e. the computer algorithm is called, i.e. the JS function the_computer_plays() is called with arguments, all the Boards and the Board ids
         if($turn == $B3_id)
             echo "<script type=\"text/javascript\">
                     the_computer_plays(" . json_encode($Board_1) . ", " . json_encode($Board_2) . ", " . json_encode($Comp_Board) . ", " . $B1_id . ", " . $B2_id . ", " . $B3_id . ");
                 </script>";
-        echo "1. ", $Hitted_1, "<br>", "2. ", $Hitted_2, "<br>", "3. ", $Hitted_3, "<br>";
         $Turns = "Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id;
         $check_Turns = True;
         $Lost1 = "Lost_" . $B1_id . "_" . $B2_id . "_" . $B3_id;
@@ -2265,13 +2228,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             {
                     while($row = $result->fetch_assoc())
                     {
-                        echo $row["TABLE_NAME"] . "<br>";
+                        // checks for the presence of the Lost Table and the Turns Table
                         if($Turns == $row["TABLE_NAME"])
                             $check_Turns = False;
                         if($Lost1 == $row["TABLE_NAME"] || $Lost2 == $row["TABLE_NAME"])
                             $check_Lost = False;
                     }
             }
+    // checks which arrangement of Turns Table is present in the Database
     if($check_Turns)
     {
         $result = $mysqli->query("SELECT * FROM Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id);
@@ -2279,6 +2243,9 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         {
             while($row = $result->fetch_assoc())
             {
+                // when a player is lost, i.e. hitted variable goes to 14, a image pops on the lost players Board and Turn variable is skipped from the lost player and a new Table Lost Table is created which will keep a track of the player who has lost the game 1st so that other player cannot actack that players board as it will be useless and will lose a move to them
+                // when the 2nd player falls, both the lost players board are overed with a 'Game Over' image and the winner Board gets the 'Winner' image. The Turn Table gets a value '0' as now no one will be playing the game further and the Game Ends at tis point
+                // once the game ends a back buttons pops on the screen which will direct to the index.php after deleting all the related Tables for this game in clear_tables.php
                 if($Hitted_1 == 14)
                 {
                     echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
@@ -2323,11 +2290,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 else if($Hitted_2 == 14)
                 {
                     $L = $B2_id;
-                    echo "GONE";
                     echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
-
-                    echo $B3_id, "<br>", $L, "<br>";
-                    echo $check_Lost;
                     if($row['Turn'] == $B2_id)
                     {
                         $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='" . $B3_id . "'");
@@ -2389,7 +2352,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2403,7 +2365,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
