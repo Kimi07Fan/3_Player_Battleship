@@ -1,0 +1,9 @@
+WELCOME TO THE PLAYING GUIDE OF 3 PLAYER BATTLESHIP
+
+Before we start, you must ensure that you are on the same network as the server i.e. where the instructions for INSTALLME.txt were carried out. Also, if you have followed the instructions, then you would already know the IP address of the server. If not, however, then please find out. 
+
+TO PLAY:
+1) Open a web browser. 
+2) Type in the IP Address of the server (which is in the format of xxx.xxx.xxx.xxx) and then followed by "/Battleship/". For example: "192.172.74.2/Battleship/" must be entered into the browser. 
+3) This should redirect you to the file index.php
+4) Enjoy!

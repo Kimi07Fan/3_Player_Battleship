@@ -15,7 +15,7 @@
     }
     .play_button{
         position: absolute;
-        left: 680px;
+        left: 580px;
         top: 200px;
     }
     .htp_button{
@@ -50,7 +50,7 @@
 <br>
 <form method = "get" action = "setup.html" class = "play_button">
 <!--input type = "submit" name = "Play!" value = "Play!" height "20px" width = "500px" color = "black"-->
-<input type = "image" src = "Play_button.jpeg" alt = "submit" height = "100" width = "100">
+<input type = "image" src = "Play_button.jpeg" alt = "submit" height = "100" width = "300">
 </form>
 <form method = "get" action = "htp.html" class = "htp_button">
 <input type = "image" src = "How_to_play.png" alt = "submit" height = "100" width = "200">

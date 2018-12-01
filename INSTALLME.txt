@@ -1,0 +1,14 @@
+WELCOME TO THE INSTALLATION GUIDE OF THE 3 PLAYER BATTLESHIP!
+
+Pre-Requisites: XAMPP (or any web-server solution stack with PHP and SQL)
+
+TO INSTALL:
+1) Enable XAMPP Server.
+2) Open the XAMPP folder.
+3) Open folder htdocs
+4) Create a folder "Battleship"
+5) Copy all files from this download folder into the created folder "Battleship"
+6) Open a web browser.
+7) Type in "localhost/Battleship" and you should be redirected onto the file index.php
+
+INFORMATION YOU MUST CIRCULATE TO THE OTHER PLAYERS: Your IP address on the network to which you are connected.
