@@ -126,8 +126,6 @@
         z-index: 1;
         top: 0px;
         left: 0px;
-        /*margin-left: auto;*/
-        /*margin-right: auto;*/
         size: cover;
         height: 100%;
         width: 100%;
@@ -184,11 +182,13 @@
 </style>
 <script type="text/javascript">
 function place(a, b, selected, orient){
+    // The variables fnl, lf and tp are defined so that we are able to place the image of the ship in the correct position on the screen. 
     var fnl = ""
     lf = parseInt("201") + parseInt(b) * parseInt("40");
     lf = eval(lf);
     tp = 101 + a * 40;
     fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute"
+    // The validity of the functions has already been checked, all we need to do is put the imaage on the screen, which is again done by the variable ac_h. 
     if ((selected == "ac") && (orient == "Horizontal")) {
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
@@ -247,6 +247,7 @@ function place(a, b, selected, orient){
     }
 }
 function put_my_ships(ship_id, orient, cell_number){
+    // This function converts the ship_id and cell_number into the required format to call the function place. 
     a = Math.floor(cell_number / 10);
     b = cell_number % 10 - 1;
     if (b == -1) {
@@ -268,6 +269,7 @@ function put_my_ships(ship_id, orient, cell_number){
     place(a, b, ship, orient);
 }
 function hit_or_miss(a, b, hit, id, last_hit) {
+    // Ths function, given the cell location and whether it has been hit or not, and then appends the image onto the screen. The variables tp, lf and fnl are used in the same ways as before. 
     var fnl = "";
     if (id == 1){  // Me
         tp = 101 + a * 40;
@@ -323,6 +325,7 @@ function hit_or_miss(a, b, hit, id, last_hit) {
     }
 }
 function check_cell(cell_number, h_or_m, player_id, last_hit){
+    // This function converts the cell number into the required format to call the function hit_or_miss.
     a = Math.floor(cell_number / 10);
     b = cell_number % 10 - 1;
     if (b == -1) {
@@ -332,6 +335,7 @@ function check_cell(cell_number, h_or_m, player_id, last_hit){
     hit_or_miss(a, b, h_or_m, player_id, last_hit);
 }
 function show_turn(id) {
+    // This function sees who's turn it is and appends a small image over the player's name, to indicate to that player that it's their turn using the variable ac_h. 
     if (id == 0) {
         return;
     }
@@ -349,14 +353,15 @@ function show_turn(id) {
     document.body.appendChild(ac_h);
 }
 function ch2_delay(cell, id1, id2, id3, turn, lost) {
-    // delay(1000);
+    // This function helps in the playing the animation of the cell blowing up.
     location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
 }
 function ch3_delay(cell, id1, id2, id3, turn, lost) {
-    // delay(1000);
+    // This function helps in the playing the animation of the cell blowing up.    
     location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
 }
 function check_hit_2(cell, id1, id2, id3, turn, lost){
+    // This function is what is called when you click on a button on the other player's board. It calls the php file which allows us to see whether there is actually a ship there or not. 
     if(turn == id1 && lost != id2) {
         a = Math.floor(cell / 10);
         b = cell % 10 - 1;
@@ -376,6 +381,7 @@ function check_hit_2(cell, id1, id2, id3, turn, lost){
     }
 }
 function check_hit_3(cell, id1, id2, id3, turn, lost){
+    // This function is what is called when you click on a button on the cpmputer's board. It calls the php file which allows us to see whether there is actually a ship there or not. 
     if(turn == id1 && lost != id3){
         a = Math.floor(cell / 10);
         b = cell % 10 - 1;
@@ -396,6 +402,7 @@ function check_hit_3(cell, id1, id2, id3, turn, lost){
     }
 }
 function show_hits_on_side(player_id, ship_id, no_of_hits){
+    // This function takes in as input the player, ship, and the number of hits that ship has taken, and then it displays on screen this information. 
     if (player_id == 1) {
         if (ship_id == 5) {
             lf = 20;
@@ -542,6 +549,7 @@ var i;
         passing[i] = 0;
     }
 function check_validity_and_place(ship_id, orient, a, b){
+    // This is a function which is used to check whether a given ship in a given orientation is valid in it's positioning or not. The method used is the same as in setup.html. 
     if ((ship_id == 5) && (orient == "Horizontal")) {
         if (b > 5) {
             return false;
@@ -674,6 +682,7 @@ function check_validity_and_place(ship_id, orient, a, b){
     }
 }
 function create_comp_board(){
+    // This function creates a randomly generated board for the computer to use. This is almost randomly generated such that there is no ships in the central 4x4 grid. 
     var i;
     var direction = [];
     direction[0] = "Horizontal";
@@ -718,6 +727,7 @@ function comp_hit_cell(id, id1, id2, id3, turn){
     }
 }
 function evaluate_board(board){
+    // This function, upon given a board, calculates how many times (and in which places) the ship has been hit and which cells have been hit on and missed. 
     var i;
     var ac_hits;
     var cr_hits;
@@ -777,6 +787,7 @@ function evaluate_board(board){
     return return_list;
 }
 function compute_guesses(cell_number) {
+    // This function, upon given a cell number, copmutes the cells on the grid which surround it. 
     var r;
     r = []
     a = Math.floor(cell_number / 10);
@@ -830,6 +841,7 @@ function compute_guesses(cell_number) {
     return r;
 }
 function minimum_of_list(list) {
+    // This function calculates the smallest element of the list. 
     var i;
     var minimum = list[0];
     for (i = 1; i < list.length; i++) {
@@ -840,6 +852,7 @@ function minimum_of_list(list) {
     return minimum;
 }
 function maximum_of_list(list) {
+    // This function calculates the largest element of the list. 
     var i;
     var maximum = list[0];
     for (i = 1; i < list.length; i++) {
@@ -850,6 +863,10 @@ function maximum_of_list(list) {
     return maximum;
 }
 function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
+    /* This function calculates the next guess of the computer. This has 2 parts:
+        1: Who to attack
+        2: Where to attack
+    */
     pl_1_array = evaluate_board(board_1);
     pl_2_array = evaluate_board(board_2);
     comp_array = evaluate_board(computer_board);
