@@ -32,7 +32,7 @@ Buttons:-
   Destroyer (image, ship of length 2): on clicking this button, the page recognises that the user wishes to place his destroyer on the board next.
   Back to menu: Directs the user back to the index.php page
   How to play: Directs the user to the htp.html page.
-  Let's go: Directs the user to the play_area.php page. This, however, first sends certain to the server by using the php file send_board.php _____________________________________________.
+  Let's go: Directs the user to the play_area.php page. This, however, first sends certain to the server by using the php file send_board.php 
 JavaScript Variables:-
   Passing: an array of length 100 which contains the value of every cell. 
     0 => No ship
@@ -61,8 +61,8 @@ JavasScript Functions:-
   hit_or_miss(a, b, hit, id, last_hit): For the 3 boards, it places the Miss cell image over the cell where there is no ship and a hit cell image over the cells which has been hit and there is a ship.
   check_cell(cell_number, h_or_m, player_id, last_hit): It does a small numerical conversion and then calls hit_or_miss in the given format. 
   show_turn(id): It presents the image which gives the indication of which player's move is next. 
-  ch2_delay(cell, id1, id2, id3, turn, lost): Calls the php file check_hit.php _________________________ to check whether a given cell in the board of player 2 has a ship in it or not. 
-  ch3_delay(cell, id1, id2, id3, turn, lost): Calls the php file check_hit.php _________________________ to check whether a given cell in the board of player 2 has a ship in it or not. 
+  ch2_delay(cell, id1, id2, id3, turn, lost): Calls the php file check_hit.php to check whether a given cell in the board of player 2 has a ship in it or not. 
+  ch3_delay(cell, id1, id2, id3, turn, lost): Calls the php file check_hit.php to check whether a given cell in the board of player 2 has a ship in it or not. 
   check_hit_2(cell, id1, id2, id3, turn, lost): It shows the gif-image of a cell getting blown up by the hit, when a cell of player 2 is hit.
   check_hit_3(cell, id1, id2, id3, turn, lost): It shows the gif-image of a cell getting blown up by the hit, when a cell of player 3 is hit.
   show_hits_on_side(player_id, ship_id, no_of_hits): It shows the number of hits that each player's ships have taken on the side of their respective boards. 
@@ -95,12 +95,6 @@ JavaScript Variables:-
 
 10) clear_tables.php
   This php file Deletes all the Tables related to this game so that the Database is not crowded
-__________________________________________________
-SUDARSHAAN K. DAS
-Please complete this document by adding the php functions of each file mentioned here (and also those which were not mentioned here.) 
-__________________________________________________
-
-
 
 
 
