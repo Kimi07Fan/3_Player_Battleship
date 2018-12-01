@@ -92,7 +92,7 @@
     p.pos_fixed_pl2 {
         position: absolute;
         top: 12px;
-        left: 970px;
+        right: 330px;
         font-family: "Times New Roman", Times, serif;
         font-style: normal;
         font-size: 40px;
@@ -184,258 +184,71 @@
 </style>
 <script type="text/javascript">
 function place(a, b, selected, orient){
-    // alert(a);
-    // alert(b);
-    // alert(selected);
-    // alert(orient);
     var fnl = ""
     lf = parseInt("201") + parseInt(b) * parseInt("40");
     lf = eval(lf);
     tp = 101 + a * 40;
     fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute"
-    // alert(selected);
-    // alert(a);
-    // alert(b);
-    // if (completed.includes(selected) == true) {
-    //     return;
-    // }
     if ((selected == "ac") && (orient == "Horizontal")) {
-        // if (b > 5){
-        //     return;
-        // }
-        // if (passing[10*a + b + 1] == 5) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 2] == 5) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 3] == 5) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 4] == 5) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 5] == 5) {
-        //     return;
-        // }
-        // alert("Say cheese?")
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Aircraft_Carrier_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ac");
-        // alert(completed);
-        // passing[10*a + b + 1] = 5;
-        // passing[10*a + b + 2] = 5;
-        // passing[10*a + b + 3] = 5;
-        // passing[10*a + b + 4] = 5;
-        // passing[10*a + b + 5] = 5;
-        // alert(passing);
     }
     if ((selected == "cr") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
-        // if (b > 6){
-        //     return;
-        // }
-        // if (passing[10*a + b + 1] == 4) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 2] == 4) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 3] == 4) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 4] == 4) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Cruiser_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("cr");
-        // alert(completed);
-        // passing[10*a + b + 1] = 4;
-        // passing[10*a + b + 2] = 4;
-        // passing[10*a + b + 3] = 4;
-        // passing[10*a + b + 4] = 4;
     }
     if ((selected == "sb") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
-        // if (b > 7){
-        //     return;
-        // }
-        // if (passing[10*a + b + 1] == 3) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 2] == 3) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 3] == 3) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Submarine_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("sb");
-        // alert(completed);
-        // passing[10*a + b + 1] = 3;
-        // passing[10*a + b + 2] = 3;
-        // passing[10*a + b + 3] = 3;
     }
     if ((selected == "ds") && (orient == "Horizontal")) {
-        // alert("Say cheese?")
-        // if (b > 8){
-        //     return;
-        // }
-        // if (passing[10*a + b + 1] == 2) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 2] == 2) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Destroyer_True.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ds");
-        // alert(completed);
-        // passing[10*a + b + 1] = 2;
-        // passing[10*a + b + 2] = 2;
     }
     if ((selected == "ac") && (orient == "Vertical")) {
-        // if (a > 5){
-        //     return;
-        // }
-        // // if (passing[10*a + b + 1] == 5) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 11] == 5) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 21] == 5) {
-        //     return;
-        // }
-        // if (passing[10*a + b + 31] == 5) {
-        // return;
-        // }
-        // // if (passing[10*a + b + 41] == 5) {
-        //     return;
-        // }
-        // alert("Say cheese?")
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Aircraft_Carrier_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ac");
-        // alert(completed);
-        // passing[10*a + b + 1] = 5;
-        // passing[10*a + b + 11] = 5;
-        // passing[10*a + b + 21] = 5;
-        // passing[10*a + b + 31] = 5;
-        // passing[10*a + b + 41] = 5;
-        // alert(passing);
     }
     if ((selected == "cr") && (orient == "Vertical")) {
-        // alert("Say cheese?")
-        // if (a > 6){
-        //     return;
-        // }
-        // // if (passing[10*a + b + 1] == 4) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 11] == 4) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 21] == 4) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 31] == 4) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Cruiser_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("cr");
-        // alert(completed);
-        // passing[10*a + b + 1] = 4;
-        // passing[10*a + b + 11] = 4;
-        // passing[10*a + b + 21] = 4;
-        // passing[10*a + b + 31] = 4;
     }
     if ((selected == "sb") && (orient == "Vertical")) {
-        // alert("Say cheese?")
-        // if (a > 7){
-        //     return;
-        // }
-        // // if (passing[10*a + b + 1] == 3) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 11] == 3) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 21] == 3) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Submarine_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("sb");
-        // alert(completed);
-        // passing[10*a + b + 1] = 3;
-        // passing[10*a + b + 11] = 3;
-        // passing[10*a + b + 21] = 3;
     }
     if ((selected == "ds") && (orient == "Vertical")) {
-        // alert("Say cheese?")
-        // if (a > 8){
-        //     return;
-        // }
-        // // if (passing[10*a + b + 1] == 2) {
-        //     return;
-        // }
-        // // if (passing[10*a + b + 11] == 2) {
-        //     return;
-        // }
         var ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "Destroyer_False.png");
         ac_h.setAttribute("style", fnl);
-        // alert("I'm here!");
-        // alert(fnl);
         document.body.appendChild(ac_h);
         completed.push("ds");
-        // alert(completed);
-        // passing[10*a + b + 1] = 2;
-        // passing[10*a + b + 11] = 2;
     }
-    // alert(passing);
 }
 function put_my_ships(ship_id, orient, cell_number){
-    // alert("Going Inside");
-    // alert(ship_id);
-    // alert(orient);
-    // alert(cell_number);
     a = Math.floor(cell_number / 10);
     b = cell_number % 10 - 1;
-    // alert(a);
-    // alert(b);
     if (b == -1) {
         b = 9;
         a = a - 1;
@@ -455,25 +268,15 @@ function put_my_ships(ship_id, orient, cell_number){
     place(a, b, ship, orient);
 }
 function hit_or_miss(a, b, hit, id, last_hit) {
-    /* See if you do need the thing for the player who is playing. You may need it */
-    // alert(a);
-    // alert(b);
-    // alert(hit);
-    // alert(id);
     var fnl = "";
     if (id == 1){  // Me
         tp = 101 + a * 40;
         lf = 201 + b * 40;
-        // alert(tp, lf)
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         if (hit != 0){
-            // another = document.createElement("IMG");
-            // another.setAttribute("src", "Blow.gif");
-            // another.setAttribute("style", fnl);
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
-            // document.body.appendChild(another);
             document.body.appendChild(ac_h);
         }
         else {
@@ -485,33 +288,16 @@ function hit_or_miss(a, b, hit, id, last_hit) {
     }
     
     if (id == 2){  // Other Player
-        // alert(a);
-        // alert(b);
-        // alert(hit);
-        // alert(id);
         tp = 101 + a * 40;
-        // alert(tp);
         lf = 851 + b * 40;
-        // alert(lf);
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;";
-        // alert (fnl);
         if (hit != 0){
-            // alert(id);
-            // alert(board);
-            // alert(10 * a + b + 1)
-            if (last_hit == 10 * a + b + 1) {
-                another = document.createElement("IMG");
-                another.setAttribute("src", "Blow.gif");
-                another.setAttribute("style", fnl);
-                document.body.appendChild(another);
-            }   
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
             document.body.appendChild(ac_h);
         }
         else {
-            // alert("Hi");
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Miss_cell.png");
             ac_h.setAttribute("style", fnl);
@@ -523,14 +309,12 @@ function hit_or_miss(a, b, hit, id, last_hit) {
         lf = 521 + b * 40;
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;"
         if (hit != 0){
-            // alert("Hi");
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Hit_cell.png");
             ac_h.setAttribute("style", fnl);
             document.body.appendChild(ac_h);
         }
         else {
-            // alert("Hi");
             ac_h = document.createElement("IMG");
             ac_h.setAttribute("src", "Miss_cell.png");
             ac_h.setAttribute("style", fnl);
@@ -539,7 +323,6 @@ function hit_or_miss(a, b, hit, id, last_hit) {
     }
 }
 function check_cell(cell_number, h_or_m, player_id, last_hit){
-    // alert(board);
     a = Math.floor(cell_number / 10);
     b = cell_number % 10 - 1;
     if (b == -1) {
@@ -574,8 +357,6 @@ function ch3_delay(cell, id1, id2, id3, turn, lost) {
     location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=3';
 }
 function check_hit_2(cell, id1, id2, id3, turn, lost){
-    // alert("hit " + lost);
-    // alert(cell);
     if(turn == id1 && lost != id2) {
         a = Math.floor(cell / 10);
         b = cell % 10 - 1;
@@ -584,28 +365,17 @@ function check_hit_2(cell, id1, id2, id3, turn, lost){
             a = a - 1;
         }    
         var fnl = '';
-        // alert(a);
-        // alert(b);
         tp = 65 + a * 40;
-        // alert(tp);
         lf = 848 + b * 40;
-        // alert(lf);
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;" + "width: 100px; height: 100px;";
         ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "blow.gif");
         ac_h.setAttribute("style", fnl);
         document.body.appendChild(ac_h);
-        // alert("Here");
-        // window.setTimeout(ch2_delay, 5000);
-        // delay(20000);
         setTimeout(ch2_delay, 750, cell, id1, id2, id3, turn, lost);
-        // alert("also here");
-        // location.href = 'check_hit.php?cell=' + cell + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=2';
-        // setTimeout("ch2_delay(cell, id1, id2, id3, turn, lost)", 1);
     }
 }
 function check_hit_3(cell, id1, id2, id3, turn, lost){
-    // alert("hit " + cell);
     if(turn == id1 && lost != id3){
         a = Math.floor(cell / 10);
         b = cell % 10 - 1;
@@ -614,20 +384,13 @@ function check_hit_3(cell, id1, id2, id3, turn, lost){
             a = a - 1;
         }    
         var fnl = '';
-        // alert(a);
-        // alert(b);
         tp = 615 + a * 40;
-        // alert(tp);
         lf = 518 + b * 40;
-        // alert(lf);
         fnl += "top: " + tp + "px; left: " + lf + "px; position: absolute;" + "width: 100px; height: 100px;";
         ac_h = document.createElement("IMG");
         ac_h.setAttribute("src", "blow.gif");
         ac_h.setAttribute("style", fnl);
         document.body.appendChild(ac_h);
-        // alert("Here");
-        // window.setTimeout(ch2_delay, 5000);
-        // delay(20000);
         setTimeout(ch3_delay, 750, cell, id1, id2, id3, turn, lost);
 
     }
@@ -657,7 +420,6 @@ function show_hits_on_side(player_id, ship_id, no_of_hits){
             }
         }
         if (ship_id == 3) {
-            // alert("A1");
             lf = 70;
             for (i = 0; i < no_of_hits; i++) {
                 tp = 270 + i * 40;
@@ -780,7 +542,6 @@ var i;
         passing[i] = 0;
     }
 function check_validity_and_place(ship_id, orient, a, b){
-    // alert(passing);
     if ((ship_id == 5) && (orient == "Horizontal")) {
         if (b > 5) {
             return false;
@@ -790,7 +551,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 3] = 5;
         passing[10*a + b + 4] = 5;
         passing[10*a + b + 5] = 5;
-        // alert("Hey1");
         return true;
     }
     if ((ship_id == 4) && (orient == "Horizontal")) {
@@ -813,7 +573,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 2] = 4;
         passing[10*a + b + 3] = 4;
         passing[10*a + b + 4] = 4;
-        // alert("Hey2");
         return true;
     }
     if ((ship_id == 3) && (orient == "Horizontal")) {
@@ -832,7 +591,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 1] = 3;
         passing[10*a + b + 2] = 3;
         passing[10*a + b + 3] = 3;
-        // alert("Hey3");
         return true;
     }
     if ((ship_id == 2) && (orient == "Horizontal")) {
@@ -847,13 +605,10 @@ function check_validity_and_place(ship_id, orient, a, b){
         }
         passing[10*a + b + 1] = 2;
         passing[10*a + b + 2] = 2;
-        // alert("Hey4");
         return true;
     }
     if ((ship_id == 5) && (orient == "Vertical")) {
-        // alert("Vac");
         if (a > 5){
-            // alert("Nope5");
             return false;
         }
         passing[10*a + b + 1] = 5;
@@ -861,7 +616,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 21] = 5;
         passing[10*a + b + 31] = 5;
         passing[10*a + b + 41] = 5;
-        // alert("Hey5");
         return true;
     }
     if ((ship_id == 4) && (orient == "Vertical")) {
@@ -884,7 +638,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 11] = 4;
         passing[10*a + b + 21] = 4;
         passing[10*a + b + 31] = 4;
-        // alert("Hey6");
         return true;
     }
     if ((ship_id == 3) && (orient == "Vertical")) {
@@ -903,7 +656,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         passing[10*a + b + 1] = 3;
         passing[10*a + b + 11] = 3;
         passing[10*a + b + 21] = 3;
-        // alert("Hey7");
         return true;
     }
     if ((ship_id == 2) && (orient == "Vertical")) {
@@ -918,7 +670,6 @@ function check_validity_and_place(ship_id, orient, a, b){
         }
         passing[10*a + b + 1] = 2;
         passing[10*a + b + 11] = 2;
-        // alert("Hey8");
         return true;
     }
 }
@@ -933,35 +684,24 @@ function create_comp_board(){
         var flag = false;
         while (flag == false){
             var dir = direction[Math.floor(Math.random() * direction.length)];
-            // alert(direction);
-            // alert(random_1);
-            // alert(random_2);
             var rand_1 = random_1[Math.floor(Math.random() * random_1.length)];
             var rand_2 = random_2[Math.floor(Math.random() * random_2.length)];
-            // alert(i);
-            // alert(dir);
-            // alert(rand_1);
-            // alert(rand_2);
             if (dir == "Horizontal") {
                 var ok = check_validity_and_place(i, dir, rand_1, rand_2);
-                // alert(ok);
                 if (ok == true){
                     flag = true;
                 }
             }
             if (dir == "Vertical") {
                 var ok = check_validity_and_place(i, dir, rand_2, rand_1);
-                // alert(ok);
                 if (ok == true){
                     flag = true;
                 }
             }
         }
     }
-    // alert(passing);
 }
 function send_board(id1, id2){
-    // alert("GOME");
     location.href = 'send_comp_board.php?id1=' + id1 + '&id2=' + id2 + '&array=' + passing;
 }
 function comp_hit_cell(id, id1, id2, id3, turn){
@@ -978,7 +718,6 @@ function comp_hit_cell(id, id1, id2, id3, turn){
     }
 }
 function evaluate_board(board){
-    // alert(board);
     var i;
     var ac_hits;
     var cr_hits;
@@ -1001,9 +740,7 @@ function evaluate_board(board){
     ds_loc = [];
     ms_loc = [];
     for (i = 1; i < 101; i++) {
-        // alert(board[i]);
         if (board[i] == 5) {
-            // alert("Here");
             ac_loc[ac_hits] = i;
             ac_hits = ac_hits + 1;
         }
@@ -1026,7 +763,6 @@ function evaluate_board(board){
     }
     var return_list;
     return_list = [];
-    // alert(ac_hits);
     return_list[0] = ac_hits;
     return_list[1] = cr_hits;
     return_list[2] = sb_hits;
@@ -1114,18 +850,11 @@ function maximum_of_list(list) {
     return maximum;
 }
 function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
-    // alert(board_1);
     pl_1_array = evaluate_board(board_1);
-    // alert("Eh?");
     pl_2_array = evaluate_board(board_2);
     comp_array = evaluate_board(computer_board);
-    // alert("Here Now");
-    // alert(pl_1_array);
     var who_to_hit = 0;
     var guess = 0;
-    // alert(pl_1_array[5]);
-    // alert(pl_2_array[5]);
-    // alert(comp_array[5]);
     if (pl_1_array[5] == 14) {
         who_to_hit = 2;
     }
@@ -1181,7 +910,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         }
     }
     else {
-        // alert("here");
         if (pl_1_array[5] > pl_2_array[5]) {
             who_to_hit = 2;
         }
@@ -1193,11 +921,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             var who_to_hit = mb[Math.floor(Math.random() * mb.length)];
         }
     }
-    // alert(who_to_hit);  
-    // Looking for patterns in the board to be attacked.
     if (who_to_hit == 1) {
-        // alert("A1");
-        // alert(pl_1_array[0]);
         var ac_hits = pl_1_array[0];
         var cr_hits = pl_1_array[1];
         var sb_hits = pl_1_array[2];
@@ -1208,20 +932,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         var sb_loc = pl_1_array[8];
         var ds_loc = pl_1_array[9];
         var ms_loc = pl_1_array[10];
-        // What the hell am I doing with my life?
-        // Anyway, back to the code.
-        // alert("Ok");
-        // alert(ac_hits != 0);
-        // alert(ac_hits != 5);
-        // alert("Ok1");
         if ((ac_hits != 0) && (ac_hits != 5)) {
-            // alert(ac_hits);
             if (ac_hits == 1) {
                 var possible_hits;
                 possible_hits = [];
                 current_hit = ac_loc[0];
                 possible_hits = compute_guesses(current_hit);
-                // alert("pos " + possible_hits);
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
                     if (board_1[possible_hits[j]] == -1) {
@@ -1231,33 +947,13 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 }
             }
             else {
-                // alert("Ok");
                 var possible_hits;
                 possible_hits = [];
                 var current_hit_1 = ac_loc[0];
-                // current_hit_1 = ac_loc[0];
                 var current_hit_2 = ac_loc[1];
-                // alert(ac_loc);
-                // alert((current_hit_1 - current_hit_2) % 10);
-                // alert();
-                // alert(minimum_of_list(ac_loc));
-                // alert(board_1[minimum_of_list(ac_loc) - 1]);
                 var a = Math.floor((minimum_of_list(ac_loc) - 1) / 10);
                 var b = (minimum_of_list(ac_loc)-1) % 10;
                 if (((current_hit_1 - current_hit_2) % 10) == 0) {
-                    // if(a == 0)
-                    // // {
-                    // //     // if(b == 0)
-                    // //     // {
-                    // //     //     // if (board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                    // //     //     //     possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                    // //     //     //     possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                    // //     //     //     possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                    // //     //     //     possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    // //     //     // }    
-                    // //     // }
-                    // // }
-
                     if (a != 0 && board_1[minimum_of_list(ac_loc) - 10] == 0) {
                         possible_hits[0] = minimum_of_list(ac_loc) + 10;
                         possible_hits[1] = minimum_of_list(ac_loc) + 20;
@@ -1270,44 +966,16 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[2] = maximum_of_list(ac_loc) - 30;
                         possible_hits[3] = maximum_of_list(ac_loc) - 40;
                     }    
-                    // else if (board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[3] = current_hit_1 + 30;
                         possible_hits[5] = current_hit_1 + 40;
                         possible_hits[0] = current_hit_1 - 10;
                         possible_hits[2] = current_hit_1 - 20;
                         possible_hits[4] = current_hit_1 - 30;
-                        // possible_hits[7] = current_hit_1 - 40;
                     }
                 }
                 else {
-                    // alert("M1" + ac_loc);
-                    // alert("bhd " + current_hit_1);
-                    // if (board_1[minimum_of_list(ac_loc) - 10] == -1) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 10] == -1) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(ac_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(ac_loc) + 1;
                         possible_hits[1] = minimum_of_list(ac_loc) + 2;
@@ -1321,22 +989,16 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[3] = maximum_of_list(ac_loc) - 4;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[3] = current_hit_1 + 3;
                         possible_hits[5] = current_hit_1 + 4;
                         possible_hits[0] = current_hit_1 - 1;
                         possible_hits[2] = current_hit_1 - 2;
                         possible_hits[4] = current_hit_1 - 3;
-                        // possible_hits[7] = current_hit_1 - 4;
                     }
                 }
-                // alert("position " + possible_hits);
-                // alert("len" + possible_hits.length);
                 var j;
                 for (j = 0; j < possible_hits.length; j++) {
-                    // alert(board_1[possible_hits[j]]);
-                    // alert(possible_hits[j])
                     if(possible_hits[j] > 0 && possible_hits[j] < 101)
                     {
                         if (board_1[possible_hits[j]] == -1 && possible_hits[j] >= 1) {
@@ -1345,9 +1007,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         }
                     }
                 }
-                // alert("Got here with guess " + guess)
             }
-        // alert("Ok");
         }
         else if ((cr_hits != 0) && (cr_hits != 4)) {
             if (cr_hits == 1) {
@@ -1381,36 +1041,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[1] = maximum_of_list(cr_loc) - 20;
                         possible_hits[2] = maximum_of_list(cr_loc) - 30;
                     }    
-                    // else if (board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[3] = current_hit_1 + 30;
                         possible_hits[0] = current_hit_1 - 10;
                         possible_hits[2] = current_hit_1 - 20;
-                        // possible_hits[5] = current_hit_1 - 30;
                     }
                 }
                 else {
-                    // if (board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(cr_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(cr_loc) + 1;
                         possible_hits[1] = minimum_of_list(cr_loc) + 2;
@@ -1422,12 +1060,10 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[2] = maximum_of_list(cr_loc) - 3;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[3] = current_hit_1 + 3;
                         possible_hits[0] = current_hit_1 - 1;
                         possible_hits[2] = current_hit_1 - 2;
-                        // possible_hits[5] = current_hit_1 - 3;
                     }
                 }
                 var j;
@@ -1472,30 +1108,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[0] = maximum_of_list(sb_loc) - 10;
                         possible_hits[1] = maximum_of_list(sb_loc) - 20;
                     }    
-                    // else if (board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[0] = current_hit_1 - 10;
-                        // possible_hits[3] = current_hit_1 - 20;
                     }
                 }
                 else {
-                    // if (board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(sb_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(sb_loc) + 1;
                         possible_hits[1] = minimum_of_list(sb_loc) + 2;
@@ -1505,10 +1123,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[1] = maximum_of_list(sb_loc) - 2;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[0] = current_hit_1 - 1;
-                        // possible_hits[3] = current_hit_1 - 2;
                     }
                 }
                 var j;
@@ -1537,7 +1153,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
             }
         }
         else {
-            // alert ("A2");
             var i;
             var possible_hits;
             possible_hits = [];
@@ -1548,11 +1163,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 var target_cell;
                 var flag;
                 flag = false;
-                // alert("Okay i'm here");
                 while (flag != true) {
                     target_cell = ms_loc[Math.floor(Math.random() * ms_loc.length)];
-                    // alert(target_cell);
-                    // alert("Here");
                     if ((target_cell - 11) >= 1 && (target_cell - 11) <= 100 && target_cell % 10 != 1 && board_1[target_cell - 11] == -1){
                         possible_hits.push(target_cell - 11);
                     }
@@ -1568,19 +1180,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if (possible_hits.length > 0) {
                         flag = true
                     }
-                    // alert(possible_hits);
                 }
             }
-            // for (i = 1; i < 101; i++) {
-            //     if (board_1[i] == -1) {
-            //         possible_hits.push(i);
-            //     }
-            // }
-            // alert(possible_hits);
-            // if (possible_hits == []) {
-            //     possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];                
-            // }
-            // alert(possible_hits);
             guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
         }
     }
@@ -1595,8 +1196,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
         sb_loc = pl_2_array[8];
         ds_loc = pl_2_array[9];
         ms_loc = pl_2_array[10];
-        // What the hell am I doing with my life?
-        // Anyway, back to the code.
         if ((ac_hits != 0) && (ac_hits != 5)) {
             if (ac_hits == 1) {
                 var possible_hits;
@@ -1631,42 +1230,16 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[2] = maximum_of_list(ac_loc) - 30;
                         possible_hits[3] = maximum_of_list(ac_loc) - 40;
                     }    
-                    // else if (board_1[minimum_of_list(ac_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 3;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 4;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 3;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 4;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[3] = current_hit_1 + 30;
                         possible_hits[5] = current_hit_1 + 40;
                         possible_hits[0] = current_hit_1 - 10;
                         possible_hits[2] = current_hit_1 - 20;
                         possible_hits[4] = current_hit_1 - 30;
-                        // possible_hits[7] = current_hit_1 - 40;
                     }
                 }
                 else {
-                    // if (board_1[minimum_of_list(ac_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(ac_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(ac_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(ac_loc) + 30;
-                    //     possible_hits[3] = minimum_of_list(ac_loc) + 40;
-                    // }
-                    // else if (board_1[maximum_of_list(ac_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(ac_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(ac_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(ac_loc) - 30;
-                    //     possible_hits[3] = maximum_of_list(ac_loc) - 40;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(ac_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(ac_loc) + 1;
                         possible_hits[1] = minimum_of_list(ac_loc) + 2;
@@ -1680,14 +1253,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[3] = maximum_of_list(ac_loc) - 4;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[3] = current_hit_1 + 3;
                         possible_hits[5] = current_hit_1 + 4;
                         possible_hits[0] = current_hit_1 - 1;
                         possible_hits[2] = current_hit_1 - 2;
                         possible_hits[4] = current_hit_1 - 3;
-                        // possible_hits[7] = current_hit_1 - 4;
                     }
                 }
                 var j;
@@ -1734,36 +1305,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[1] = maximum_of_list(cr_loc) - 20;
                         possible_hits[2] = maximum_of_list(cr_loc) - 30;
                     }    
-                    // else if (board_1[minimum_of_list(cr_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 2;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 3;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 2;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 3;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[3] = current_hit_1 + 30;
                         possible_hits[0] = current_hit_1 - 10;
                         possible_hits[2] = current_hit_1 - 20;
-                        // possible_hits[5] = current_hit_1 - 30;
                     }
                 }
                 else {
-                    // if (board_1[minimum_of_list(cr_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(cr_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(cr_loc) + 20;
-                    //     possible_hits[2] = minimum_of_list(cr_loc) + 30;
-                    // }
-                    // else if (board_1[maximum_of_list(cr_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(cr_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(cr_loc) - 20;
-                    //     possible_hits[2] = maximum_of_list(cr_loc) - 30;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(cr_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(cr_loc) + 1;
                         possible_hits[1] = minimum_of_list(cr_loc) + 2;
@@ -1775,12 +1324,10 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[2] = maximum_of_list(cr_loc) - 3;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[3] = current_hit_1 + 3;
                         possible_hits[0] = current_hit_1 - 1;
                         possible_hits[2] = current_hit_1 - 2;
-                        // possible_hits[5] = current_hit_1 - 3;
                     }
                 }
                 var j;
@@ -1825,30 +1372,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[0] = maximum_of_list(sb_loc) - 10;
                         possible_hits[1] = maximum_of_list(sb_loc) - 20;
                     }    
-                    // else if (board_1[minimum_of_list(sb_loc) - 1] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 1;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 2;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 1] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 1;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 2;
-                    // }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 10;
                         possible_hits[1] = current_hit_1 + 20;
                         possible_hits[0] = current_hit_1 - 10;
-                        // possible_hits[3] = current_hit_1 - 20;
                     }
                 }
                 else {
-                    // if (board_1[minimum_of_list(sb_loc) - 10] == 0) {
-                    //     possible_hits[0] = minimum_of_list(sb_loc) + 10;
-                    //     possible_hits[1] = minimum_of_list(sb_loc) + 20;
-                    // }
-                    // else if (board_1[maximum_of_list(sb_loc) + 10] == 0) {
-                    //     possible_hits[0] = maximum_of_list(sb_loc) - 10;
-                    //     possible_hits[1] = maximum_of_list(sb_loc) - 20;
-                    // }    
                     if (b != 0 && board_1[minimum_of_list(sb_loc) - 1] == 0) {
                         possible_hits[0] = minimum_of_list(sb_loc) + 1;
                         possible_hits[1] = minimum_of_list(sb_loc) + 2;
@@ -1858,10 +1387,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                         possible_hits[1] = maximum_of_list(sb_loc) - 2;
                     }    
                     else {                
-                        // possible_hits[0] = current_hit_1 + 1;
                         possible_hits[1] = current_hit_1 + 2;
                         possible_hits[0] = current_hit_1 - 1;
-                        // possible_hits[3] = current_hit_1 - 2;
                     }
                 }
                 var j;
@@ -1902,8 +1429,6 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                 flag = false;
                 while (flag != true) {
                     target_cell = ms_loc[Math.floor(Math.random() * ms_loc.length)];
-                    // alert(target_cell);
-                    // alert("Here");
                     if ((target_cell - 11) >= 1 && (target_cell - 11) <= 100 && target_cell % 10 != 1 && board_2[target_cell - 11] == -1){
                         possible_hits.push(target_cell - 11);
                     }
@@ -1919,19 +1444,8 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     if (possible_hits.length > 0) {
                         flag = true;
                     }
-                    // alert(possible_hits);
                 }
             }
-            // for (i = 1; i < 101; i++) {
-            //     if (board_2[i] == -1) {
-            //         possible_hits.push(i);
-            //     }
-            // }
-            // alert(possible_hits);
-            // if (possible_hits == []) {
-            //     possible_hits = [34, 35, 36, 37, 44, 45, 46, 47, 54, 55, 56, 57, 64, 65, 66, 67];                
-            // }
-            // alert(possible_hits);
             guess = possible_hits[Math.floor(Math.random() * possible_hits.length)];
         }
     }
@@ -1939,10 +1453,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
     return_list = [];
     return_list[0] = who_to_hit;
     return_list[1] = guess;
-    // alert("who " + who_to_hit);
-    // alert(guess);
     location.href = 'check_hit_comp.php?cell=' + guess + '&id1=' + id1 + '&id2=' + id2 + '&id3=' + id3 + '&B=' + who_to_hit;
-    // return return_list;
 }
 </script>
 </head>
@@ -1951,32 +1462,14 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
 <p id="something" class="above_demo">Refresh in:</p>
 <p id="Timer" class = "demo"></p>
 <script>
-    // Set the date we're counting down to
-    // var countDownDate = new Date("Jan 5, 2019 15:37:25").getTime();
-
     var then = new Date().getSeconds();
     then += 6
-    // Update the count down every 1 second
     var x = setInterval(function()
     {
-        // Get todays date and time
         var now = new Date().getSeconds();
-        
-        // Find the distance between now and the count down date
         var seconds = (then - now)%10;
-        // var seconds = (now%5) + 1;
-        
-        // Time calculations for days, hours, minutes and seconds
-        // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        // var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        
-        // Output the result in an element with id="Timer"
         if (seconds > 0)
             document.getElementById("Timer").innerHTML = seconds;
-        
-        // If the count down is over, write some text 
         if (distance < 0)
         {
             clearInterval(x);
@@ -2804,16 +2297,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2821,16 +2310,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2857,16 +2342,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                           if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2874,16 +2355,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B1_id . "_" . $B2_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2906,10 +2383,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B2_id)
@@ -2923,10 +2397,7 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B1_id)
@@ -2965,16 +2436,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";                        
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -2982,16 +2449,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>'";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -3014,16 +2477,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'Winner.gif' class = 'WinnerP3'>'";
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -3031,16 +2490,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP3'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>'";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B3_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -3063,16 +2518,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP2'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP1'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B2_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
@@ -3080,16 +2531,12 @@ function the_computer_plays(board_1, board_2, computer_board, id1, id2, id3) {
                     {
                         echo "<img src = 'GameOver.gif' class = 'GameOverP1'>";
                         echo "<img src = 'Winner.gif' class = 'WinnerP2'>";
-                        echo "<form method = \"get\" action = \"clear_tables.php\" class = \"center\">";
-                        echo "<input type=\"hidden\" name=\"id1\" value=\"". $B1_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id2\" value=\"". $B2_id . "\">";
-                        echo "<input type=\"hidden\" name=\"id3\" value=\"". $B3_id . "\">";
+                        echo '<form method = "get" action = "index.php" class = "center">';
                         echo '<input type = "image" src = "Back_to_menu.png" height = "100" width = "200">';
                         echo '</form>';
                         if($row['Turn'] == $B1_id)
                         {
                             $mysqli->query("UPDATE Turns_" . $B2_id . "_" . $B1_id . "_" . $B3_id . " SET Turn='0'");
-    //          Need to make changes here              //             Turn as 0
                             echo "<meta http-equiv=\"refresh\" content=\"0\">";
                         }
                     }
